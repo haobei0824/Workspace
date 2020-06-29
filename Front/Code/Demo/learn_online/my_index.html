@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learn Online</title>
+    <style>
+        /*css 初始化代码 css reset*/
+        /*清除元素默认的内外边距*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        /*清除列表样式*/
+        
+        li {
+            list-style: none;
+        }
+        /*去掉button 默认自带的边框*/
+        
+        button {
+            border: none;
+        }
+        
+        body {
+            background-color: #f3f5f7;
+            background-color: red;
+            /*方便写代码 一会别忘了删除*/
+            /*height: 3000px;*/
+        }
+        /*宽度 1200 水平居中*/
+        
+        .width {
+            width: 1200px;
+            margin: auto;
+        }
+        /*header start*/
+        
+        .header {
+            height: 46px;
+            /*background-color: pink;*/
+            /* auto 保证x轴方向居中 */
+            margin: 30px auto;
+        }
+        
+        .logo {
+            float: left;
+            margin-right: 60px;
+        }
+        
+        .navigation {
+            float: left;
+        }
+        
+        .navigation ul li {
+            float: left;
+        }
+        
+        .navigation ul li a {
+            float: left;
+            height: 40px;
+            padding: 0 10px;
+            margin-right: 20px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #050505;
+            text-decoration: none;
+        }
+        
+        .search {
+            float: left;
+        }
+        
+        .search input {
+            float: left;
+            width: 340px;
+            height: 40px;
+            border: 1px solid #00a4ff;
+            border-right: 0;
+            padding-left: 20px;
+            color: #ccc;
+        }
+        
+        .search button {
+            float: left;
+            width: 50px;
+            height: 42px;
+            background: url(images/btn.png);
+        }
+        
+        .user {
+            float: left;
+            height: 42px;
+            line-height: 42px;
+            margin-left: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .banner {
+            height: 420px;
+            background: #1c036c url(images/banner2.jpg) no-repeat top center;
+        }
+        
+        .subnav {
+            float: left;
+            width: 150px;
+            height: 420px;
+            padding: 0 20px;
+            /*背景半透明*/
+            background: rgba(0, 0, 0, .3);
+        }
+        
+        .subnav li {
+            height: 45px;
+            line-height: 45px;
+        }
+        
+        .subnav li a {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .subnav li a:hover {
+            color: #00b4ff;
+        }
+        
+        .subnav span {
+            float: right;
+        }
+        
+        .course {
+            /*因为course 子盒子有了浮动，则就不会外边距塌陷的问题了*/
+            float: right;
+            width: 228px;
+            height: 300px;
+            background-color: #fff;
+            margin-top: 50px;
+        }
+        
+        .course-hd {
+            height: 48px;
+            background-color: #9bceea;
+            font-size: 18px;
+            text-align: center;
+            line-height: 48px;
+            color: #fff;
+            /*文字加粗*/
+            /*font-weight: bold;*/
+            font-weight: 700;
+        }
+        
+        .course-bd {
+            /*没有宽度的盒子 padding 不会撑开盒子*/
+            padding: 0 15px;
+        }
+        
+        .course-bd ul {
+            /*外边距塌陷的问题
+	margin-top: 10px;*/
+            padding-top: 10px;
+        }
+        
+        .course-bd li {
+            /*行高等与高度 只能让单行文本垂直居中*/
+            height: 50px;
+            border-bottom: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        
+        .course-bd li h4 {
+            font-size: 14px;
+            color: #4e4e4e;
+        }
+        
+        .course-bd li p {
+            font-size: 12px;
+            color: #a5a5a5;
+        }
+        
+        .goods {
+            height: 60px;
+            background-color: #fff;
+            margin-top: 10px;
+            /*利用行高可以继承的特性*/
+            line-height: 60px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+        }
+        
+        .goods h3 {
+            float: left;
+            margin: 0 30px;
+            font-size: 16px;
+            color: #00a4ff;
+        }
+        
+        .goods-item {
+            float: left;
+            color: #bfbfbf;
+        }
+        
+        .goods-item a {
+            font-size: 16px;
+            color: #050505;
+            margin: 0 30px;
+        }
+        
+        .mod {
+            float: right;
+            margin-right: 30px;
+            font-size: 14px;
+            color: #00a4ff;
+        }
+        
+        *box start*/ .box {
+            margin-top: 15px;
+        }
+        
+        .box-hd {
+            height: 60px;
+            line-height: 60px;
+            /*background-color: pink;*/
+        }
+        
+        .box-hd h3 {
+            float: left;
+            font-size: 20px;
+            color: #494949;
+            /*让粗体不加粗 400 == normal*/
+            font-weight: 400;
+        }
+        
+        .box-hd a {
+            float: right;
+            margin-right: 30px;
+            font-size: 12px;
+            color: #a5a5a5;
+        }
+        
+        .box-bd {
+            /*这个盒子一定不要给高度 因为我们可能放一行 也可能是2行 或者n行*/
+            /*宽度呢？ 呵呵*/
+            /*box-bd 宽度 超过了 版心 1200 是可以的，就就解决了问题*/
+            width: 1215px;
+        }
+        
+        .box-bd li {
+            float: left;
+            width: 228px;
+            height: 270px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+        }
+        
+        .box-bd li img {
+            width: 100%;
+        }
+        
+        .box-bd li h4 {
+            margin: 20px;
+            font-size: 14px;
+            color: #050505;
+            font-weight: 400;
+        }
+        
+        .box-bd li p {
+            margin: 0 20px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .box-bd p span {
+            color: orange;
+        }
+        /*box end */
+        /*footer*/
+        
+        .footer {
+            height: 385px;
+            padding-top: 30px;
+            background-color: #fff;
+        }
+        
+        .copyright {
+            float: left;
+        }
+        
+        .copyright p {
+            font-size: 12px;
+            color: #666;
+            margin: 20px 0 15px 0;
+        }
+        
+        .app {
+            display: block;
+            width: 118px;
+            height: 34px;
+            border: 1px solid #00a4ff;
+            text-align: center;
+            line-height: 34px;
+            font-size: 16px;
+            color: #00a4ff;
+        }
+        
+        .links {
+            float: right;
+        }
+        
+        .links dl {
+            float: left;
+            margin-left: 100px;
+        }
+        
+        .links dt {
+            height: 35px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .links dd a {
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .links dd a:hover {
+            color: #004aff;
+        }
+    </style>
+
+
+</head>
+<!-- header -->
+<div class="header width">
+    <!-- logo in header -->
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div>
+
+    <!-- navigation in header -->
+    <div class="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Course</a></li>
+            <li><a href="#">Career</a></li>
+        </ul>
+    </div>
+
+    <!-- search bar in header -->
+    <div class="search">
+        <input type="text" placeholder="keywords">
+        <button></button>
+    </div>
+
+    <div class="user">
+        <img src="images/user.jpg" alt=""> lilei-hanmm
+    </div>
+</div>
+
+<!-- banner -->
+<div class="banner">
+    <div class="width">
+        <div class="subnav">
+            <ul>
+                <li><a href="#">前端开发 <span>></span></a></li>
+                <li><a href="#">后端开发 <span>></span></a></li>
+                <li><a href="#">移动开发 <span>></span></a></li>
+                <li><a href="#">人工智能 <span>></span></a></li>
+                <li><a href="#">商业预测 <span>></span></a></li>
+                <li><a href="#">云计算&大数据 <span>></span></a></li>
+                <li><a href="#">运维&从测试 <span>></span></a></li>
+                <li><a href="#">UI设计 <span>></span></a></li>
+                <li><a href="#">产品 <span>></span></a></li>
+            </ul>
+        </div>
+
+        <!-- 右侧 course -->
+        <div class="course">
+            <div class="course-hd">我的课程表</div>
+            <div class="course-bd">
+                <ul>
+                    <li>
+                        <h4>继续学习 程序语言设计</h4>
+                        <p>正在学习-使用对象</p>
+                    </li>
+                    <li>
+                        <h4>继续学习 程序语言设计</h4>
+                        <p>正在学习-使用对象</p>
+                    </li>
+                    <li>
+                        <h4>继续学习 程序语言设计</h4>
+                        <p>正在学习-使用对象</p>
+                    </li>
+
+                </ul>
+                <a href="#" class="all">全部课程</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 精品推荐，头部-->
+<div class="goods width">
+    <h3> 精品推荐 </h3>
+    <div class="goods-item">
+        | <a href="#">jQuery</a> | <a href="#">Spark</a> | <a href="#">MySQL</a> | <a href="#">JavaWeb</a> | <a href="#">MySQL</a> | <a href="#">JavaWeb</a>
+    </div>
+    <div class="mod"> 修改兴趣 </div>
+</div>
+
+<!-- box start -->
+<div class="box width">
+    <div class="box-hd">
+        <h3>精品推荐</h3>
+        <a href="#">查看全部</a>
+    </div>
+
+    <!-- 此地方一定要清除浮动，div就会有高度 -->
+    <div class="box-bd clearfix">
+        <ul>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+
+
+        </ul>
+    </div>
+
+</div>
+<!-- box end -->
+
+<!-- box start -->
+<div class="box width">
+    <div class="box-hd">
+        <h3>精品推荐</h3>
+        <a href="#">查看全部</a>
+    </div>
+
+    <!-- 此地方一定要清除浮动，div就会有高度 -->
+    <div class="box-bd clearfix">
+        <ul>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+            <li>
+                <img src="images/pic.jpg" alt="">
+                <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                <p><span>高级</span> • 1125人在学习</p>
+            </li>
+
+
+        </ul>
+    </div>
+
+</div>
+<!-- box end -->
+
+<!-- footer -->
+<!-- footer start -->
+<div class="footer">
+    <div class="width">
+        <!-- 左侧 -->
+        <div class="copyright">
+            <img src="images/logo.png" alt="">
+            <p>学成在线致力于普及中国最好的教育它与中国一流大学和机构合作提供在线课程。<br> © 2017年XTCG Inc.保留所有权利。-沪ICP备15025210号</p>
+            <a href="#" class="app"> 下载 app</a>
+        </div>
+        <!-- 右侧 -->
+        <div class="links">
+            <dl>
+                <dt>关于学成网</dt>
+                <dd><a href="#">关于</a></dd>
+                <dd><a href="#">管理团队</a></dd>
+                <dd><a href="#">工作机会</a></dd>
+                <dd><a href="#">客户服务</a></dd>
+                <dd><a href="#">帮助</a></dd>
+            </dl>
+            <dl>
+                <dt>新手指南</dt>
+                <dd><a href="#">如何注册</a></dd>
+                <dd><a href="#">如何选课</a></dd>
+                <dd><a href="#">如何拿到毕业证</a></dd>
+                <dd><a href="#">学分是什么</a></dd>
+                <dd><a href="#">考试未通过怎么办</a></dd>
+            </dl>
+
+            <dl>
+                <dt>合作伙伴</dt>
+                <dd><a href="#">合作机构</a></dd>
+                <dd><a href="#">合作导师</a></dd>
+            </dl>
+
+
+        </div>
+    </div>
+</div>
+<!-- footer end -->
+
+
+
+<body>
+
+</body>
+
+</html>
