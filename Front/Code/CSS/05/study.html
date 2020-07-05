@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css standard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            width: 1200px;
+            height: 42px;
+            text-align: center;
+            background-color: red;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 192px;
+            height: 42px;
+        }
+        
+        .div_float {
+            float: left;
+        }
+        
+        .nav {
+            height: 42px;
+        }
+        
+        .nav li {
+            height: 42px;
+        }
+        
+        .nav li ul {
+            float: left;
+            height: 42px;
+            margin: auto 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo div_float">
+            <img src="images/logo.png" alt="">
+        </div>
+
+        <div class="nav div_float">
+            <li>
+                <ul>首页</ul>
+                <ul>课程</ul>
+                <ul>职业规划</ul>
+            </li>
+        </div>
+        <div class="search"></div>
+        <div class="user"></div>
+    </div>
+
+</body>
+
+</html>
