@@ -75,13 +75,17 @@
             border-right: 0;
             padding-left: 20px;
         }
+        /*去掉button 默认自带的边框*/
+        
+        button {
+            border: none;
+        }
         
         .search button {
             float: left;
             width: 50px;
             height: 42px;
             background: url(images/btn.png);
-            border: 0px;
         }
     </style>
 </head>
@@ -102,7 +106,7 @@
 
         <!-- 搜索框 -->
         <div class="search div_float">
-            <input type="search" class="input_search" value="请输入关键词">
+            <input type="text" class="input_search" value="请输入关键词">
             <button></button>
         </div>
         <!-- <div class="user"></div>
