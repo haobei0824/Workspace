@@ -19,7 +19,7 @@
             width: 1200px;
             height: 42px;
             text-align: center;
-            background-color: red;
+            /* background-color: red; */
             margin: 30px auto;
         }
         
@@ -37,16 +37,16 @@
             height: 42px;
         }
         
-        .nav li {
+        .nav ul {
             height: 42px;
         }
         
-        .nav li ul {
+        .nav ul li {
             float: left;
             height: 42px;
         }
         
-        .nav li ul a {
+        .nav ul li a {
             display: block;
             height: 42px;
             padding: 0 10px;
@@ -58,7 +58,7 @@
             text-decoration: none;
         }
         
-        .nav li ul a:hover {
+        .nav ul li a:hover {
             border-bottom: 2px solid blue;
         }
         
@@ -87,7 +87,29 @@
             height: 42px;
             background: url(images/btn.png);
         }
+        
+        .user {
+            height: 42px;
+            margin-left: 20px;
+        }
+        
+        .user span {
+            display: inline-block;
+            height: 42px;
+            line-height: 42px;
+            font-size: 14px;
+            color: #666;
+            margin: auto 0px;
+            /* background-color: red; */
+        }
+        
+        .banner {
+            height: 420px;
+            background: url(images/banner2.jpg) no-repeat top center;
+        }
     </style>
+
+
 </head>
 
 <body>
@@ -97,11 +119,11 @@
         </div>
 
         <div class="nav div_float">
-            <li>
-                <ul><a href="#">首页</a></ul>
-                <ul><a href="#">课程</a></ul>
-                <ul><a href="#">职业规划</a></ul>
-            </li>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+            </ul>
         </div>
 
         <!-- 搜索框 -->
@@ -109,7 +131,17 @@
             <input type="text" class="input_search" value="请输入关键词">
             <button></button>
         </div>
-        <!-- <div class="user"></div>
+        <div class="user div_float">
+            <img src="images/user.jpg" alt="">
+            <span>lilie</span>
+        </div>
+    </div>
+
+    <div class="banner">
+        <ul>
+            <li>前端开发</li>
+            <li>后端开发</li>
+        </ul>
     </div>
 
 </body>
