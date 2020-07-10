@@ -104,8 +104,37 @@
         }
         
         .banner {
+            width: 1200px;
             height: 420px;
+            margin: 0 auto;
             background: url(images/banner2.jpg) no-repeat top center;
+        }
+        
+        .banner ul {
+            display: inline-block;
+            width: 150px;
+            height: 400px;
+            padding: 10px 20px;
+            background-color: blue;
+        }
+        
+        .banner ul li {
+            height: 45px;
+            line-height: 45px;
+        }
+        
+        .banner ul li a {
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .banner ul li a:hover {
+            color: brown;
+        }
+        
+        .banner ul li a span {
+            float: right;
         }
     </style>
 
@@ -139,8 +168,16 @@
 
     <div class="banner">
         <ul>
-            <li>前端开发</li>
-            <li>后端开发</li>
+            <li><a href="#">前端开发 <span>></span></a></li>
+            <li><a href="#">后端开发 <span>></span></a></li>
+            <li><a href="#">移动开发 <span>></span></a></li>
+            <li><a href="#">人工智能 <span>></span></a></li>
+            <li><a href="#">商业预测 <span>></span></a></li>
+            <li><a href="#">云计算&大数据 <span>></span></a></li>
+            <li><a href="#">运维&从测试 <span>></span></a></li>
+            <li><a href="#">UI设计 <span>></span></a></li>
+            <li><a href="#">产品 <span>></span></a></li>
+
         </ul>
     </div>
 
