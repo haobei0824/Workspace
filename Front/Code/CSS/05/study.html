@@ -14,6 +14,21 @@
         li {
             list-style: none;
         }
+        /*清除浮动的*/
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
         
         body {
             background-color: #f3f5f7;
@@ -255,6 +270,46 @@
             font-size: 14px;
             color: #00a4ff;
         }
+        
+        .recommand_goods {
+            width: 1200px;
+            margin: 0px auto;
+        }
+        
+        .recommand_goods .goods_header {
+            height: 50px;
+            line-height: 50px;
+            margin: 0px auto;
+        }
+        
+        .recommand_goods .goods_header .title {
+            float: left;
+            font-size: 20px;
+            color: #494949;
+            /* margin-top: 10px; */
+        }
+        
+        .recommand_goods .goods_header a {
+            float: right;
+            margin-right: 30px;
+            font-size: 12px;
+            color: #a5a5a5;
+            text-decoration: none;
+        }
+        
+        .recommand_body {
+            width: 1215px;
+        }
+        
+        .recommand_body li {
+            float: left;
+            width: 228px;
+            height: 270px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+        }
     </style>
 
 
@@ -340,6 +395,34 @@
             <a>修改兴趣</a>
         </div>
 
+    </div>
+
+    <div class="recommand_goods width">
+        <div class="goods_header">
+            <h3 class="title">精品推荐</h3>
+            <a href="#">查看全部</a>
+        </div>
+
+        <div class="recommand_body clearfix">
+            <ul>
+                <li>
+                    <img src="images/pic.jpg" alt="">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <p><span>高级</span> • 1125人在学习</p>
+                </li>
+                <li>
+                    <img src="images/pic.jpg" alt="">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <p><span>高级</span> • 1125人在学习</p>
+                </li>
+                <li>
+                    <img src="images/pic.jpg" alt="">
+                    <h4>Think PHP 5.0 博客系统实战项目演练</h4>
+                    <p><span>高级</span> • 1125人在学习</p>
+                </li>
+            </ul>
+
+        </div>
     </div>
 
 </body>
