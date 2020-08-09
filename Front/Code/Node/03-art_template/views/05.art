@@ -1,0 +1,11 @@
+{{extend './common/layout.art'}}
+
+<!-- 相当于重写 -->
+{{block 'content'}}
+<p>{{ msg }}</p>
+{{/block}}
+
+<!-- 相当于重写 -->
+{{block 'link'}}
+<link rel="stylesheet" type="text/css" href="./main.css">
+{{/block}}
