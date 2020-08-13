@@ -9,10 +9,17 @@ app.use((req, res, next) => {
     next()
 })
 
+// 当客户端访问/request请求的时候走当前中间件
+app.use('/request', (req, res, next) => {
+    console.log('请求走了app.use / request中间件')
+    next()
+})
+
 // get的响应函数，是按照顺序执行的
 // response A没有执行next()，则response B是执行不到的
 app.get('/request', (req, res) => {
-    res.send(req.name)
+    // res.send(req.name)
+    res.send('123');
     console.log('response A')
 })
 
