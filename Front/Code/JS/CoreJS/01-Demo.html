@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+</head>
+
+<body>
+
+    <div></div>
+    <p>
+        我是文字
+        <span>123</span>
+    </p>
+    <script>
+        // 只有一个对象，没有类
+        var person1 = {
+            name: 'person1',
+            age: 14
+        };
+        console.log(person1);
+        console.log('person1 name:' + person1.name);
+
+        //  类定义，一个函数就是一个类的构造函数
+        function Person2(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        console.log(Person2);
+        var newP2 = new Person2('lisi', 4);
+        console.log(newP2);
+        console.log(newP2.name);
+
+        //  类定义
+        var person3 = function(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        console.log(person3);
+        person3.name3 = 'person3 name'; // 类属性
+        console.log(person3.name3);
+
+        var newP3 = new person3('newP3', 13);
+        console.log(newP3);
+    </script>
+
+</body>
+
+</html>
