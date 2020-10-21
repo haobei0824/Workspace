@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */; };
+		205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */; };
+		205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */; };
 		20880F3025395089000CF637 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20880F2F25395089000CF637 /* main.swift */; };
 		20880F3B25395217000CF637 /* ExtComputedProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20880F3A25395217000CF637 /* ExtComputedProperties.swift */; };
 		20E1A3AB252F58ED004DEC61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3AA252F58ED004DEC61 /* main.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMethods.swift; sourceTree = "<group>"; };
+		205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtInitializers.swift; sourceTree = "<group>"; };
+		205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSubscripts.swift; sourceTree = "<group>"; };
 		20880F2D25395089000CF637 /* Extensions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Extensions; sourceTree = BUILT_PRODUCTS_DIR; };
 		20880F2F25395089000CF637 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20880F3A25395217000CF637 /* ExtComputedProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtComputedProperties.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 			children = (
 				20880F2F25395089000CF637 /* main.swift */,
 				20880F3A25395217000CF637 /* ExtComputedProperties.swift */,
+				205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */,
+				205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */,
+				205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,8 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */,
+				205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */,
 				20880F3025395089000CF637 /* main.swift in Sources */,
 				20880F3B25395217000CF637 /* ExtComputedProperties.swift in Sources */,
+				205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

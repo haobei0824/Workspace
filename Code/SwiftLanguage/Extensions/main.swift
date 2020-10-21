@@ -7,13 +7,12 @@
 
 import Foundation
 
-
-testProperty()
+testProperties()
+testMethods()
 testMutatingInstanceMethods()
+testInitializers()
+testSubscripts()
 
-
-var a = NSObject(withName: "123");
-a.myName()
 
 
 
