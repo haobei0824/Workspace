@@ -1,3 +1,5 @@
+[TOC]
+
 ### Extensions in Swift
 
 Extensions add new functionality to 
@@ -56,5 +58,23 @@ extension NSObject {
         print(" convenience initializer: initWithName(),in extension of NSObject");
     }
 }
+```
+
+### Subscripts
+
+Extensions can add new subscripts to an existing type
+
+```swift
+extension Int {
+    subscript(digitIndex: Int) -> Int {
+        var decimalBase = 1
+        for _ in 0..<digitIndex {
+            decimalBase *= 10
+        }
+        return (self / decimalBase) % 10
+    }
+}
+
+746381295[0] == 5
 ```
 
