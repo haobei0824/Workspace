@@ -9,6 +9,7 @@ import Foundation
 
 
 testProperty()
+testMutatingInstanceMethods()
 
 
 var a = NSObject(withName: "123");

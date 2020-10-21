@@ -16,14 +16,29 @@ extension Double {
     }
 }
 
+// instance methods and type methods
+extension NSObject {
+    func myName() -> Void {
+        print("myName func extension in NSObject ")
+    }
+    
+    static func object() -> NSObject {
+        print("static func: object(), in extension of NSObject")
+        return self.init()
+    }
+}
+
+// mutating
+extension Int {
+    mutating func square() {
+        self = self * self
+    }
+}
+
 extension NSObject {
     convenience init(withName name: String) {
         self.init()
         print("initWithName func extension in NSObject");
-    }
-    
-    func myName() -> Void {
-        print("myName func extension in NSObject ")
     }
 }
 
@@ -33,4 +48,11 @@ func testProperty() -> Void {
     print("my height :" + "\(myHeight.km)" + "km")
     
     print("Double max value : " + "\(Double.max)")
+}
+
+func testMutatingInstanceMethods() -> Void {
+    var aInt = 4
+    aInt.square()
+    print("int 4 become" + " \(aInt)" + " after square()")
+    
 }
