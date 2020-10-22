@@ -78,3 +78,29 @@ extension Int {
 746381295[0] == 5
 ```
 
+### Nested Types
+
+Extensions can add new nested types to existing classes, structures, and enumerations
+
+```swift
+extension Int {
+    enum Kind {
+        case Negative
+        case Zero
+        case Positive
+    }
+    
+    var kind: Kind {
+        if self > 0 {
+            return Kind.Positive
+        }
+        
+        if self < 0 {
+            return Kind.Negative
+        }
+
+        return .Zero
+    }
+}
+```
+
