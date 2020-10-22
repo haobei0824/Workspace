@@ -12,6 +12,7 @@
 		205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */; };
 		20880F3025395089000CF637 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20880F2F25395089000CF637 /* main.swift */; };
 		20880F3B25395217000CF637 /* ExtComputedProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20880F3A25395217000CF637 /* ExtComputedProperties.swift */; };
+		209C01462541337300C20EE4 /* ExtNestedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C01452541337300C20EE4 /* ExtNestedTypes.swift */; };
 		20E1A3AB252F58ED004DEC61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3AA252F58ED004DEC61 /* main.swift */; };
 		20E1A3BA252F5987004DEC61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3B9252F5987004DEC61 /* main.swift */; };
 		20E1A3C1252F5A4D004DEC61 /* InitializerRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */; };
@@ -54,6 +55,7 @@
 		20880F2D25395089000CF637 /* Extensions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Extensions; sourceTree = BUILT_PRODUCTS_DIR; };
 		20880F2F25395089000CF637 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20880F3A25395217000CF637 /* ExtComputedProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtComputedProperties.swift; sourceTree = "<group>"; };
+		209C01452541337300C20EE4 /* ExtNestedTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtNestedTypes.swift; sourceTree = "<group>"; };
 		20E1A3A7252F58ED004DEC61 /* SwiftLanguage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftLanguage; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E1A3AA252F58ED004DEC61 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20E1A3B7252F5987004DEC61 /* Protocols */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Protocols; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */,
 				205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */,
 				205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */,
+				209C01452541337300C20EE4 /* ExtNestedTypes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209C01462541337300C20EE4 /* ExtNestedTypes.swift in Sources */,
 				205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */,
 				205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */,
 				20880F3025395089000CF637 /* main.swift in Sources */,

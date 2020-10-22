@@ -12,6 +12,7 @@ testMethods()
 testMutatingInstanceMethods()
 testInitializers()
 testSubscripts()
+testNestType()
 
 
 
