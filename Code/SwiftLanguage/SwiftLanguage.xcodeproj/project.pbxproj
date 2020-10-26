@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200826A225467DCB00AA89F3 /* PrProperties.swift */; };
 		205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */; };
 		205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */; };
 		205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		200826A225467DCB00AA89F3 /* PrProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProperties.swift; sourceTree = "<group>"; };
 		205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMethods.swift; sourceTree = "<group>"; };
 		205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtInitializers.swift; sourceTree = "<group>"; };
 		205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSubscripts.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				20E1A3B9252F5987004DEC61 /* main.swift */,
 				20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */,
+				200826A225467DCB00AA89F3 /* PrProperties.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				20E1A3C1252F5A4D004DEC61 /* InitializerRequirements.swift in Sources */,
 				20E1A3BA252F5987004DEC61 /* main.swift in Sources */,
+				200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
