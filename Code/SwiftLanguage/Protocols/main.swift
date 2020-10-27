@@ -7,7 +7,9 @@
 
 import Foundation
 
-testPropertiesProtocol()
+testMethodsProtocol()
+
+//testPropertiesProtocol()
 
 //var initProtocolClass1 = InitProtocolClass()
 //print(initProtocolClass1)
