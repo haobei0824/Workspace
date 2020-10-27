@@ -61,7 +61,50 @@ class SomeClass: SomeSuperclass, FirstProtocol, AnotherProtocol {
 
 - instance
 - static
-- mutating
+- mutating instance method, can be adopt by structures and enumerations
+
+```swift
+protocol PrMethodsProtocol {
+    func random() -> Double
+    static func getMax() -> Int
+    mutating func increase() -> Void
+}
+
+
+class PrMethodsNumber: PrMethodsProtocol {
+    var age = 10
+    
+    func random() -> Double {
+        return 1.0
+    }
+    
+    static func getMax() -> Int {
+        return Int.max
+    }
+    
+    func increase() -> Void {
+        self.age += 1
+    }
+}
+
+enum PrMethodsSwitch: PrMethodsProtocol {
+    case off, on
+    
+    func random() -> Double {
+        return 1.0
+    }
+    
+    static func getMax() -> Int {
+        return Int.max
+    }
+    
+    mutating func increase() -> Void {
+        self = .off
+    }
+}
+```
+
+
 
 
 
