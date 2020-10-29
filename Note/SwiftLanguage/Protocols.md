@@ -165,3 +165,21 @@ class IRSubClass: IRSuperClass, InitProtocol {
 }
 ```
 
+### Protocols as Types
+
+- As a parameter type or return type in a function, method, or initializer
+
+- As the type of a constant, variable, or property
+
+- As the type of items in an array, dictionary, or other container
+
+```swift
+func testProtocolType() -> Void {
+    var persons = [PropertiesProtocol]()
+    persons.append(PrPropertiesPerson())
+    if let firstItem = persons.first {
+        print("persons contain PropertiesProtocol: " + "\(firstItem)")
+    }
+}
+```
+
