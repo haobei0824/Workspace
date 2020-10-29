@@ -120,3 +120,48 @@ protocol SomeProtocol {
 }
 ```
 
+- can be adopted as either a designated initializer or a convenience initializer
+
+- In both cases, you must mark the initializer implementation with the `required` modifier:”
+
+```swift
+class SomeClass: SomeProtocol {
+    required init(someParameter: Int) {
+        // initializer implementation goes here
+    }
+}
+```
+
+use `required` and `override`, when a subclass
+
+- overrides a designated initialize
+- also implements a matching initializer protocol
+
+```swift
+protocol InitProtocol {
+    init()
+    init(withName name:String)
+    init(withName name:String, age:Int16)
+}
+
+class IRSuperClass {
+    init() {
+        // initializer implementation goes here
+    }
+}
+
+class IRSubClass: IRSuperClass, InitProtocol {
+    required override init() {      // must declare override
+        print("IRSubClass conform init() of InitProtocol")
+    }
+    
+    required init(withName name: String, age: Int16) {
+        print("IRSubClass conform init(withName,age) of InitProtocol")
+    }
+    
+    required init(withName name: String) {
+        print("IRSubClass conform init(withName) of InitProtocol")
+    }
+}
+```
+
