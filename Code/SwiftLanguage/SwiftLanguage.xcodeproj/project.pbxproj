@@ -12,6 +12,8 @@
 		205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */; };
 		205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */; };
 		206DB5962547C9D000830978 /* PrMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206DB5952547C9D000830978 /* PrMethods.swift */; };
+		20707076254A70780013335B /* PrProtocolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20707075254A70780013335B /* PrProtocolType.swift */; };
+		2070707B254A74740013335B /* PrProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070707A254A74740013335B /* PrProtocolDelegate.swift */; };
 		20880F3025395089000CF637 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20880F2F25395089000CF637 /* main.swift */; };
 		20880F3B25395217000CF637 /* ExtComputedProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20880F3A25395217000CF637 /* ExtComputedProperties.swift */; };
 		209C01462541337300C20EE4 /* ExtNestedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C01452541337300C20EE4 /* ExtNestedTypes.swift */; };
@@ -56,6 +58,8 @@
 		205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtInitializers.swift; sourceTree = "<group>"; };
 		205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSubscripts.swift; sourceTree = "<group>"; };
 		206DB5952547C9D000830978 /* PrMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrMethods.swift; sourceTree = "<group>"; };
+		20707075254A70780013335B /* PrProtocolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolType.swift; sourceTree = "<group>"; };
+		2070707A254A74740013335B /* PrProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolDelegate.swift; sourceTree = "<group>"; };
 		20880F2D25395089000CF637 /* Extensions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Extensions; sourceTree = BUILT_PRODUCTS_DIR; };
 		20880F2F25395089000CF637 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20880F3A25395217000CF637 /* ExtComputedProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtComputedProperties.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */,
 				200826A225467DCB00AA89F3 /* PrProperties.swift */,
 				206DB5952547C9D000830978 /* PrMethods.swift */,
+				20707075254A70780013335B /* PrProtocolType.swift */,
+				2070707A254A74740013335B /* PrProtocolDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20707076254A70780013335B /* PrProtocolType.swift in Sources */,
 				206DB5962547C9D000830978 /* PrMethods.swift in Sources */,
 				20E1A3C1252F5A4D004DEC61 /* InitializerRequirements.swift in Sources */,
 				20E1A3BA252F5987004DEC61 /* main.swift in Sources */,
+				2070707B254A74740013335B /* PrProtocolDelegate.swift in Sources */,
 				200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

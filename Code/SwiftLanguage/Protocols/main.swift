@@ -7,8 +7,11 @@
 
 import Foundation
 
+testProtocolDelegate()
 
-testInitalizerProtocol()
+//testProtocolType()
+
+//testInitalizerProtocol()
 
 //testMethodsProtocol()
 
