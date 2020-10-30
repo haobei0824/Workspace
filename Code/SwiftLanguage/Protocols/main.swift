@@ -7,7 +7,10 @@
 
 import Foundation
 
-testProtocolDelegate()
+
+testProtocolExtension()
+
+//testProtocolDelegate()
 
 //testProtocolType()
 
