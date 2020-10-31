@@ -104,10 +104,6 @@ enum PrMethodsSwitch: PrMethodsProtocol {
 }
 ```
 
-
-
-
-
 ### Initializer Requirements
 
 protocol syntax:
@@ -179,6 +175,37 @@ func testProtocolType() -> Void {
     persons.append(PrPropertiesPerson())
     if let firstItem = persons.first {
         print("persons contain PropertiesProtocol: " + "\(firstItem)")
+    }
+}
+```
+
+### Delegate
+
+`weak` reference delegate must be Class-Only Protocols.
+
+```swift
+protocol PrRondomDelegate: AnyObject {
+    func random() -> Int;
+}
+
+class PrProtocolRandomer: PrRondomDelegate {
+    func random() -> Int {
+        return 1
+    }
+}
+
+class PrProtocolDelegateViewController {
+    weak var weakDelegate: PrRondomDelegate?
+    var delegate: PropertiesProtocol?
+    
+    func work() -> Void {
+        if let randomNum =  weakDelegate?.random(){
+            print("weak delegate random(): " + "\(randomNum)")
+        }
+        
+        if let name =  delegate?.readonlyName {
+            print("delegate readonlyName(): " + name)
+        }
     }
 }
 ```
