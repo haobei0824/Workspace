@@ -7,8 +7,11 @@
 
 import Foundation
 
+testProtocolDeclarInExtension()
 
-testProtocolExtension()
+//testProtocolContionalExtension()
+
+//testProtocolExtension()
 
 //testProtocolDelegate()
 

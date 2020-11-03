@@ -11,9 +11,17 @@ protocol PrPEDescription {
     var textualDescription: String { get }
 }
 
+protocol PrPEMyNameProtocol {
+    var myName: String { get }
+}
+
 extension NSObject: PrPEDescription {
     var textualDescription: String {
         return self.description
+    }
+    
+    var myName: String {
+        return "NSObject"
     }
 }
 
@@ -34,5 +42,14 @@ func testProtocolContionalExtension() -> Void {
     let objs = [NSObject(),NSObject()]
     
     print("Array contional implement textualDescription() in extension: " + objs.textualDescription)
+}
+
+extension NSObject: PrPEMyNameProtocol {}
+
+func testProtocolDeclarInExtension() -> Void {
+    let obj = NSObject()
+    let nameProtocol: PrPEMyNameProtocol = obj
+    
+    print("NSObject declar implement PrPEMyNameProtocol myName() in extension: " + nameProtocol.myName)
 }
 
