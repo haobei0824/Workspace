@@ -181,7 +181,7 @@ func testProtocolType() -> Void {
 
 ### Delegate
 
-`weak` reference delegate must be Class-Only Protocols.
+`weak` reference delegate must be `Class-Only Protocols`.
 
 ```swift
 protocol PrRondomDelegate: AnyObject {
@@ -208,5 +208,42 @@ class PrProtocolDelegateViewController {
         }
     }
 }
+```
+
+### Extension Protocol
+
+- extend an existing type to adopt and conform to a new protocol 
+- Conditionally extend a `generic type` to adopt and conform to a new protocol
+- Declaring Protocol Adoption with an Extension
+
+```swift
+protocol PrPEDescription {
+    var textualDescription: String { get }
+}
+
+// extend an existing type to adopt and conform to a new protocol 
+extension NSObject: PrPEDescription {
+    var textualDescription: String {
+        return self.description
+    }
+    
+    var myName: String {
+        return "NSObject"
+    }
+}
+
+// Conditionally extend a `generic type` to adopt and conform to a new protocol
+extension Array: PrPEDescription where Element: PrPEDescription {
+    var textualDescription: String {
+        let itemsAsText = self.map { $0.textualDescription }
+        return "[" + itemsAsText.joined(separator: ", ") + "]"
+    }
+}
+
+// Declaring Protocol Adoption with an Extension
+protocol PrPEMyNameProtocol {
+    var myName: String { get }
+}
+extension NSObject: PrPEMyNameProtocol {}
 ```
 
