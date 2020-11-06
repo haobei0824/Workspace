@@ -7,7 +7,10 @@
 
 import Foundation
 
-testProtocolDeclarInExtension()
+
+testSynthesizedImplementation();
+
+//testProtocolDeclarInExtension()
 
 //testProtocolContionalExtension()
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200826A225467DCB00AA89F3 /* PrProperties.swift */; };
+		200D81572554FF1E0074DF6B /* PrSynthesizedImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */; };
 		205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */; };
 		205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */; };
 		205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		200826A225467DCB00AA89F3 /* PrProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProperties.swift; sourceTree = "<group>"; };
+		200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrSynthesizedImplementation.swift; sourceTree = "<group>"; };
 		205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMethods.swift; sourceTree = "<group>"; };
 		205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtInitializers.swift; sourceTree = "<group>"; };
 		205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSubscripts.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				20707075254A70780013335B /* PrProtocolType.swift */,
 				2070707A254A74740013335B /* PrProtocolDelegate.swift */,
 				207CE08E254BC59D00826655 /* PrProtocolExtension.swift */,
+				200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200D81572554FF1E0074DF6B /* PrSynthesizedImplementation.swift in Sources */,
 				20707076254A70780013335B /* PrProtocolType.swift in Sources */,
 				206DB5962547C9D000830978 /* PrMethods.swift in Sources */,
 				207CE08F254BC59D00826655 /* PrProtocolExtension.swift in Sources */,
