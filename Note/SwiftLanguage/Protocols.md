@@ -247,3 +247,68 @@ protocol PrPEMyNameProtocol {
 extension NSObject: PrPEMyNameProtocol {}
 ```
 
+### Synthesized Implementation
+
+Swift can automatically provide the below protocol conformance：
+
+- Equatable
+- Hashable
+- Comparable
+
+**Equatable**, the following kinds of custom types:
+
+- Structures that have only stored properties that conform to the `Equatable` protocol
+- Enumerations that have only associated types that conform to the `Equatable` protocol
+- Enumerations that have no associated types
+
+**Hashable**, the following kinds of custom types:
+
+- Structures that have only stored properties that conform to the `Hashable` protocol
+- Enumerations that have only associated types that conform to the `Hashable` protocol
+- Enumerations that have no associated types
+
+**Comparable**, the following kinds of custom types:
+
+- enumerations that don’t have a raw value
+
+- If the enumeration has associated types, they must all conform to the Comparable protocol
+
+```swift
+struct PrVector3D: Equatable {
+    var x = 0.0, y = 0.0, z = 0.0
+}
+
+extension PrVector3D: Hashable {}
+
+enum PrSkillLevel: Comparable {
+    case beginner
+    case intermediate
+    case expert(stars: Int)
+}
+
+func testSynthesizedImplementation() -> Void {
+    let twoThreeFour = PrVector3D(x: 2.0, y: 3.0, z: 4.0)
+    let anotherTwoThreeFour = PrVector3D(x: 2.0, y: 3.0, z: 4.0)
+    if twoThreeFour == anotherTwoThreeFour {
+        print("PrSynthesizedImplementation Equatable")
+    }
+    
+    print("PrSynthesizedImplementation Hashable value: " + "\(twoThreeFour.hashValue)")
+
+    
+    print("PrSynthesizedImplementation Comparable : ")
+    let levels = [PrSkillLevel.intermediate, PrSkillLevel.beginner,
+                  PrSkillLevel.expert(stars: 5), PrSkillLevel.expert(stars: 3)]
+    for level in levels.sorted() {
+        print(level)
+    }
+}
+
+```
+
+
+
+
+
+
+
