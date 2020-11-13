@@ -210,7 +210,7 @@ class PrProtocolDelegateViewController {
 }
 ```
 
-### Extension Protocol
+### conform to Protocol by type with Extension 
 
 - extend an existing type to adopt and conform to a new protocol 
 - Conditionally extend a `generic type` to adopt and conform to a new protocol
@@ -303,7 +303,19 @@ func testSynthesizedImplementation() -> Void {
         print(level)
     }
 }
+```
 
+### Protocol Inheritance
+
+A protocol can 
+
+- inherit one or more other protocols and can 
+- add further requirements on top of the requirements it inherits
+
+```swift
+protocol InheritingProtocol: SomeProtocol, AnotherProtocol {
+    // protocol definition goes here
+}
 ```
 
 
