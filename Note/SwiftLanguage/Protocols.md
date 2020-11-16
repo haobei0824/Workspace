@@ -318,8 +318,15 @@ protocol InheritingProtocol: SomeProtocol, AnotherProtocol {
 }
 ```
 
+### Class-Only Protocols
 
+limit protocol adoption to class types (and not structures or enumerations) by adding the ``AnyObject`` protocol
 
+```swift
+protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
+    // class-only protocol definition goes here
+}
+```
 
 
 
