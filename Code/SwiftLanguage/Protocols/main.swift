@@ -7,8 +7,8 @@
 
 import Foundation
 
-
-testSynthesizedImplementation();
+testCheckComformance();
+//testSynthesizedImplementation();
 
 //testProtocolDeclarInExtension()
 

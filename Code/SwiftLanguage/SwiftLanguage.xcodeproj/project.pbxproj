@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2000405A25622BF60061F375 /* PrCheckComformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000405925622BF60061F375 /* PrCheckComformance.swift */; };
 		200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200826A225467DCB00AA89F3 /* PrProperties.swift */; };
 		200D81572554FF1E0074DF6B /* PrSynthesizedImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */; };
 		202AE9CD255A3FC60041B840 /* PrProtocolInheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AE9CC255A3FC60041B840 /* PrProtocolInheritance.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2000405925622BF60061F375 /* PrCheckComformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrCheckComformance.swift; sourceTree = "<group>"; };
 		200826A225467DCB00AA89F3 /* PrProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProperties.swift; sourceTree = "<group>"; };
 		200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrSynthesizedImplementation.swift; sourceTree = "<group>"; };
 		202AE9CC255A3FC60041B840 /* PrProtocolInheritance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolInheritance.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */,
 				202AE9CC255A3FC60041B840 /* PrProtocolInheritance.swift */,
 				20EF225F255E38880012C9CD /* PrProtocolComposition.swift */,
+				2000405925622BF60061F375 /* PrCheckComformance.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				202AE9CD255A3FC60041B840 /* PrProtocolInheritance.swift in Sources */,
 				2070707B254A74740013335B /* PrProtocolDelegate.swift in Sources */,
 				20EF2260255E38880012C9CD /* PrProtocolComposition.swift in Sources */,
+				2000405A25622BF60061F375 /* PrCheckComformance.swift in Sources */,
 				200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
