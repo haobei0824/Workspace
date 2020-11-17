@@ -354,3 +354,43 @@ let birthdayPerson = Person(name: "Malcolm", age: 21)
 wishHappyBirthday(to: birthdayPerson)
 ```
 
+### optional protocol
+
+Optional requirements are available so that you can write code that interoperates with Objective-C. 
+
+- Both the protocol and the optional requirement must be marked with the ``@objc`` attribute. 
+- Note that ``@objc`` protocols can be adopted only by classes that inherit from Objective-C classes or other ``@objc`` classes. 
+- They can’t be adopted by structures or enumerations.
+
+```swift
+@objc protocol PrCounterDataSource {
+    @objc optional func increment(forCount count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
+    func name() -> String;
+}
+
+class PrThreeSource: NSObject, PrCounterDataSource {
+    func name() -> String {
+        return self.description
+    }
+    
+    let fixedIncrement = 3
+}
+
+class PrTowardsZeroSource: NSObject, PrCounterDataSource {
+    func name() -> String {
+        return self.description
+    }
+    
+    func increment(forCount count: Int) -> Int {
+        if count == 0 {
+            return 0
+        } else if count < 0 {
+            return 1
+        } else {
+            return -1
+        }
+    }
+}
+```
+
