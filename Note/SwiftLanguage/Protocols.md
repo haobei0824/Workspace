@@ -210,7 +210,7 @@ class PrProtocolDelegateViewController {
 }
 ```
 
-### conform to Protocol by type with Extension 
+### Extension of conforming  type 
 
 - extend an existing type to adopt and conform to a new protocol 
 - Conditionally extend a `generic type` to adopt and conform to a new protocol
@@ -393,4 +393,15 @@ class PrTowardsZeroSource: NSObject, PrCounterDataSource {
     }
 }
 ```
+
+### Extension of protocol
+
+Protocols can be extended to provide  implementations to conforming types
+
+- method,
+-  initializer, 
+- subscript, 
+- computed property
+
+Extension of protocol can’t make a protocol extend or inherit from another protocol.”
 
