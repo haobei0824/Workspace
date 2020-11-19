@@ -14,6 +14,7 @@
 		205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */; };
 		205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */; };
 		205B74D0253FE61D00C2AAF3 /* ExtSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */; };
+		20683F482564D2980080FDDD /* PrExtensionOfProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20683F472564D2980080FDDD /* PrExtensionOfProtocol.swift */; };
 		206DB5962547C9D000830978 /* PrMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206DB5952547C9D000830978 /* PrMethods.swift */; };
 		20707076254A70780013335B /* PrProtocolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20707075254A70780013335B /* PrProtocolType.swift */; };
 		2070707B254A74740013335B /* PrProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070707A254A74740013335B /* PrProtocolDelegate.swift */; };
@@ -66,6 +67,7 @@
 		205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMethods.swift; sourceTree = "<group>"; };
 		205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtInitializers.swift; sourceTree = "<group>"; };
 		205B74CF253FE61D00C2AAF3 /* ExtSubscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSubscripts.swift; sourceTree = "<group>"; };
+		20683F472564D2980080FDDD /* PrExtensionOfProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrExtensionOfProtocol.swift; sourceTree = "<group>"; };
 		206DB5952547C9D000830978 /* PrMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrMethods.swift; sourceTree = "<group>"; };
 		20707075254A70780013335B /* PrProtocolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolType.swift; sourceTree = "<group>"; };
 		2070707A254A74740013335B /* PrProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				20EF225F255E38880012C9CD /* PrProtocolComposition.swift */,
 				2000405925622BF60061F375 /* PrCheckComformance.swift */,
 				2094979425637B0200B54967 /* PrOptional.swift */,
+				20683F472564D2980080FDDD /* PrExtensionOfProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				2070707B254A74740013335B /* PrProtocolDelegate.swift in Sources */,
 				20EF2260255E38880012C9CD /* PrProtocolComposition.swift in Sources */,
 				2000405A25622BF60061F375 /* PrCheckComformance.swift in Sources */,
+				20683F482564D2980080FDDD /* PrExtensionOfProtocol.swift in Sources */,
 				200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
