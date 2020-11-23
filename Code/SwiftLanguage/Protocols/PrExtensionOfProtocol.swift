@@ -22,7 +22,6 @@ class PrEOPPerson2: PrPEMyNameProtocol {
     var myName: String {
         return "lisi"
     }
-uina
 }
 
 func testExtensionOfProtocol() -> Void {
