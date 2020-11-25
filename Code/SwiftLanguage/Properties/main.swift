@@ -7,5 +7,6 @@
 
 import Foundation
 
-testPropStoredProperties()
+testPropComputedProperties()
+//testPropStoredProperties()
 

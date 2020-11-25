@@ -22,6 +22,7 @@ class PropDataImporter {
 class PropDataManager {
     lazy var importer = PropDataImporter()
     var data = [String]()
+    // 代码块只执行一次
     lazy var dataName: String = {
         if data.capacity > 0 {
             return "data is full"
