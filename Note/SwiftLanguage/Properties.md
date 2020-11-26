@@ -102,3 +102,34 @@ struct PropAlternativeRect {
 }
 ```
 
+### Property Observers
+
+You can add property observers in the following places:
+
+- Stored properties that you define
+
+- Stored properties that you inherit
+
+- Computed properties that you inherit
+
+You have the option to define either or both of these observers on a property:
+
+- willSet is called just before the value is stored. with a default parameter name of ``newValue``.
+
+- didSet is called immediately after the new value is stored. with a default parameter name of ``oldValue``
+
+```swift
+class PropStepCounter {
+    var totalSteps: Int = 0 {       // stored property
+        willSet(newTotalSteps) {
+            print("About to set totalSteps to \(newTotalSteps)")
+        }
+        didSet {
+            if totalSteps > oldValue  {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+```
+
