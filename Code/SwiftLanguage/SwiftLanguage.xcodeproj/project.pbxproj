@@ -10,6 +10,7 @@
 		2000405A25622BF60061F375 /* PrCheckComformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000405925622BF60061F375 /* PrCheckComformance.swift */; };
 		200826A325467DCB00AA89F3 /* PrProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200826A225467DCB00AA89F3 /* PrProperties.swift */; };
 		200D81572554FF1E0074DF6B /* PrSynthesizedImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */; };
+		2015FEF0256F582F00799BCA /* PropPropertyObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015FEEF256F582F00799BCA /* PropPropertyObservers.swift */; };
 		202AE9CD255A3FC60041B840 /* PrProtocolInheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AE9CC255A3FC60041B840 /* PrProtocolInheritance.swift */; };
 		205B74C6253FE18A00C2AAF3 /* ExtMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */; };
 		205B74CB253FE39900C2AAF3 /* ExtInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */; };
@@ -75,6 +76,7 @@
 		2000405925622BF60061F375 /* PrCheckComformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrCheckComformance.swift; sourceTree = "<group>"; };
 		200826A225467DCB00AA89F3 /* PrProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProperties.swift; sourceTree = "<group>"; };
 		200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrSynthesizedImplementation.swift; sourceTree = "<group>"; };
+		2015FEEF256F582F00799BCA /* PropPropertyObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropPropertyObservers.swift; sourceTree = "<group>"; };
 		202AE9CC255A3FC60041B840 /* PrProtocolInheritance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolInheritance.swift; sourceTree = "<group>"; };
 		205B74C5253FE18A00C2AAF3 /* ExtMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtMethods.swift; sourceTree = "<group>"; };
 		205B74CA253FE39900C2AAF3 /* ExtInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtInitializers.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				20AF6217256A0ECF0074DA10 /* main.swift */,
 				20AF6220256A103E0074DA10 /* PropStoredProperties.swift */,
 				2084712A256E063800CD47F3 /* PropComputedProperties.swift */,
+				2015FEEF256F582F00799BCA /* PropPropertyObservers.swift */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				2084712B256E063800CD47F3 /* PropComputedProperties.swift in Sources */,
 				20AF6221256A103E0074DA10 /* PropStoredProperties.swift in Sources */,
 				20AF6218256A0ECF0074DA10 /* main.swift in Sources */,
+				2015FEF0256F582F00799BCA /* PropPropertyObservers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 
 import Foundation
 
-testPropComputedProperties()
+testPropertyObservers()
+
+//testPropComputedProperties()
 //testPropStoredProperties()
 
