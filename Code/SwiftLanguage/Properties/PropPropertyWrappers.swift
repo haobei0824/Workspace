@@ -10,10 +10,24 @@ import Foundation
 @propertyWrapper
 struct PropTwelveOrLess {
     private var number: Int
-    init() { self.number = 0 }
+    // projectedValue can be any type.
+    // Here projectedValue means number be set with newValue or not
+    var projectedValue: Bool
+    init() {
+        self.number = 0
+        self.projectedValue = true
+    }
     var wrappedValue: Int {
         get { return number }
-        set { number = min(newValue, 12) }
+        set {
+            if newValue > 12 {
+                number = 12
+                self.projectedValue = false
+            } else {
+                number = newValue
+                self.projectedValue = true
+            }
+        }
     }
 }
 
@@ -46,6 +60,7 @@ struct PropSmallNumber {
     }
 }
 
+//Initial Values for Wrapped Properties
 struct PropSmallRectangle {
     @PropTwelveOrLess var height: Int
     @PropTwelveOrLess var width: Int
@@ -67,8 +82,15 @@ struct PropSmallRectangle2 {
 func testPropertyWrappers() -> Void {
     var rectangle = PropSmallRectangle()
     print("rectangle init height: " + "\(rectangle.height)")
+    print("rectangle init height, projectedValue:: " + "\(rectangle.$height)")
+    
+    rectangle.height = 5
+    print("rectangle after set height 5: " + "\(rectangle.height)")
+    print("rectangle after set height 5, projectedValue: " + "\(rectangle.$height)")
+    
     rectangle.height = 17
     print("rectangle after set height 17: " + "\(rectangle.height)")
+    print("rectangle after set height 17, projectedValue: " + "\(rectangle.$height)")
 }
 
 
