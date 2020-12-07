@@ -133,3 +133,80 @@ class PropStepCounter {
 }
 ```
 
+### Property Wrappers
+
+Wrapper: adds a layer of separation between code that manages how a property is stored and the code that defines a property.
+
+projected value:  can expose additional functionality
+
+```swift
+@propertyWrapper
+struct PropTwelveOrLess {
+    private var number: Int
+    // projectedValue can be any type.
+    // Here projectedValue means number be set with newValue or not
+    var projectedValue: Bool
+    init() {
+        self.number = 0
+        self.projectedValue = true
+    }
+    var wrappedValue: Int {
+        get { return number }
+        set {
+            if newValue > 12 {
+                number = 12
+                self.projectedValue = false
+            } else {
+                number = newValue
+                self.projectedValue = true
+            }
+        }
+    }
+}
+```
+
+Initial
+
+```swift
+@propertyWrapper
+struct PropSmallNumber {
+    private var maximum: Int
+    private var number: Int
+
+    var wrappedValue: Int {
+        get { return number }
+        set { number = min(newValue, maximum) }
+    }
+
+    init() {
+//        self.init(wrappedValue:0)
+        print("propertyWrapper PropSmallNumber init() ")
+        maximum = 12
+        number = 0
+    }
+    init(wrappedValue: Int) {
+//        self.init(wrappedValue: wrappedValue, maximum: 12)
+        print("propertyWrapper PropSmallNumber init(wrappedValue: Int)")
+        maximum = 12
+        number = min(wrappedValue, maximum)
+    }
+    init(wrappedValue: Int, maximum: Int) {
+        print("propertyWrapper PropSmallNumber init(wrappedValue: Int, maximum: Int)")
+        self.maximum = maximum
+        number = min(wrappedValue, maximum)
+    }
+}
+
+//Initial Values for Wrapped Properties
+struct PropSmallRectangle {
+    @PropTwelveOrLess var height: Int
+    @PropTwelveOrLess var width: Int
+    @PropSmallNumber var height2: Int   // init()
+    @PropSmallNumber var height3: Int = 2       // init(wrappedValue: Int)
+    @PropSmallNumber(wrappedValue: 2, maximum: 5) var height4: Int  // init(wrappedValue: Int, maximum: Int)
+    @PropSmallNumber(maximum: 9) var height5: Int = 4   // init(wrappedValue: Int, maximum: Int)
+    // 编译不过
+//    @PropSmallNumber(wrappedValue: 2, maximum: 5) var height6: Int = 4
+}
+```
+
