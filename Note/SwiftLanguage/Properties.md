@@ -210,3 +210,39 @@ struct PropSmallRectangle {
 }
 ```
 
+### Type property
+
+`static`
+
+- stored Property
+- computed property
+- can not override
+
+`class`
+
+- computed property
+- can override
+
+```swift
+class PropStructure {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int {
+        return 1
+    }
+    
+    class var name: String {
+        return "PropStructure"
+    }
+    
+    // 不支持 class stored property
+//    class var age: Int = 2
+}
+
+class PropSubStructure: PropStructure {
+    class override var name: String {
+        let superName = super.name;
+        return "son + " + superName
+    }
+}		
+```
+
