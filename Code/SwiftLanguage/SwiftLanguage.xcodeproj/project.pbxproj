@@ -12,6 +12,9 @@
 		200D81572554FF1E0074DF6B /* PrSynthesizedImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */; };
 		2015FEF0256F582F00799BCA /* PropPropertyObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015FEEF256F582F00799BCA /* PropPropertyObservers.swift */; };
 		2015FEF6256F5D8C00799BCA /* PropPropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015FEF5256F5D8C00799BCA /* PropPropertyWrappers.swift */; };
+		2017DB80258077E800E74559 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2017DB7F258077E800E74559 /* main.swift */; };
+		2017DB8B25807BAA00E74559 /* SubInstanceSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2017DB8A25807BAA00E74559 /* SubInstanceSubscript.swift */; };
+		2017DB9325807CEE00E74559 /* SubTypeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2017DB9225807CEE00E74559 /* SubTypeSubscript.swift */; };
 		2019408C257F28CD00D7150A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019408B257F28CD00D7150A /* main.swift */; };
 		20194096257F293B00D7150A /* MeModifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20194095257F293B00D7150A /* MeModifying.swift */; };
 		2019409D257F2B1300D7150A /* MeTypeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019409C257F2B1300D7150A /* MeTypeMethod.swift */; };
@@ -39,6 +42,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2017DB7B258077E800E74559 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		20194087257F28CD00D7150A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +104,10 @@
 		200D81562554FF1E0074DF6B /* PrSynthesizedImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrSynthesizedImplementation.swift; sourceTree = "<group>"; };
 		2015FEEF256F582F00799BCA /* PropPropertyObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropPropertyObservers.swift; sourceTree = "<group>"; };
 		2015FEF5256F5D8C00799BCA /* PropPropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropPropertyWrappers.swift; sourceTree = "<group>"; };
+		2017DB7D258077E800E74559 /* Subscripts */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Subscripts; sourceTree = BUILT_PRODUCTS_DIR; };
+		2017DB7F258077E800E74559 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2017DB8A25807BAA00E74559 /* SubInstanceSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInstanceSubscript.swift; sourceTree = "<group>"; };
+		2017DB9225807CEE00E74559 /* SubTypeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTypeSubscript.swift; sourceTree = "<group>"; };
 		20194089257F28CD00D7150A /* Methods */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Methods; sourceTree = BUILT_PRODUCTS_DIR; };
 		2019408B257F28CD00D7150A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20194095257F293B00D7150A /* MeModifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModifying.swift; sourceTree = "<group>"; };
@@ -124,6 +140,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2017DB7A258077E800E74559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20194086257F28CD00D7150A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +185,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2017DB7E258077E800E74559 /* Subscripts */ = {
+			isa = PBXGroup;
+			children = (
+				2017DB7F258077E800E74559 /* main.swift */,
+				2017DB8A25807BAA00E74559 /* SubInstanceSubscript.swift */,
+				2017DB9225807CEE00E74559 /* SubTypeSubscript.swift */,
+			);
+			path = Subscripts;
+			sourceTree = "<group>";
+		};
 		2019408A257F28CD00D7150A /* Methods */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +239,7 @@
 				20E1A3B8252F5987004DEC61 /* Protocols */,
 				20AF6216256A0ECF0074DA10 /* Properties */,
 				2019408A257F28CD00D7150A /* Methods */,
+				2017DB7E258077E800E74559 /* Subscripts */,
 				20E1A3A8252F58ED004DEC61 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -218,6 +252,7 @@
 				20880F2D25395089000CF637 /* Extensions */,
 				20AF6215256A0ECF0074DA10 /* Properties */,
 				20194089257F28CD00D7150A /* Methods */,
+				2017DB7D258077E800E74559 /* Subscripts */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +288,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2017DB7C258077E800E74559 /* Subscripts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2017DB83258077E800E74559 /* Build configuration list for PBXNativeTarget "Subscripts" */;
+			buildPhases = (
+				2017DB79258077E800E74559 /* Sources */,
+				2017DB7A258077E800E74559 /* Frameworks */,
+				2017DB7B258077E800E74559 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Subscripts;
+			productName = Subscripts;
+			productReference = 2017DB7D258077E800E74559 /* Subscripts */;
+			productType = "com.apple.product-type.tool";
+		};
 		20194088257F28CD00D7150A /* Methods */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2019408F257F28CD00D7150A /* Build configuration list for PBXNativeTarget "Methods" */;
@@ -347,6 +399,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					2017DB7C258077E800E74559 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					20194088257F28CD00D7150A = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -382,11 +437,22 @@
 				20E1A3B6252F5987004DEC61 /* Protocols */,
 				20AF6214256A0ECF0074DA10 /* Properties */,
 				20194088257F28CD00D7150A /* Methods */,
+				2017DB7C258077E800E74559 /* Subscripts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2017DB79258077E800E74559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2017DB9325807CEE00E74559 /* SubTypeSubscript.swift in Sources */,
+				2017DB80258077E800E74559 /* main.swift in Sources */,
+				2017DB8B25807BAA00E74559 /* SubInstanceSubscript.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20194085257F28CD00D7150A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,6 +520,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		2017DB81258077E800E74559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2017DB82258077E800E74559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		2019408D257F28CD00D7150A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -662,6 +746,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2017DB83258077E800E74559 /* Build configuration list for PBXNativeTarget "Subscripts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2017DB81258077E800E74559 /* Debug */,
+				2017DB82258077E800E74559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2019408F257F28CD00D7150A /* Build configuration list for PBXNativeTarget "Methods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
