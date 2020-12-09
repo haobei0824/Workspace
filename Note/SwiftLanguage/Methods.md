@@ -1,5 +1,11 @@
 [TOC]
 
+method can be defined in:
+
+- class
+- structure
+- enumeration
+
 ### Instance method
 
 `mutating` instance method
