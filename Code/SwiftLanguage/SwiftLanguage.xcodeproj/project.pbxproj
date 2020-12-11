@@ -35,6 +35,7 @@
 		20AF6218256A0ECF0074DA10 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF6217256A0ECF0074DA10 /* main.swift */; };
 		20AF6221256A103E0074DA10 /* PropStoredProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF6220256A103E0074DA10 /* PropStoredProperties.swift */; };
 		20C120C4257DDE3200A3347A /* PropTypeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C120C3257DDE3200A3347A /* PropTypeProperties.swift */; };
+		20C3653125831EEF00FF1BE4 /* InhOverriding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C3653025831EEF00FF1BE4 /* InhOverriding.swift */; };
 		20DC4EC42581D0E200D7356A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC4EC32581D0E200D7356A /* main.swift */; };
 		20E1A3AB252F58ED004DEC61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3AA252F58ED004DEC61 /* main.swift */; };
 		20E1A3BA252F5987004DEC61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3B9252F5987004DEC61 /* main.swift */; };
@@ -141,6 +142,7 @@
 		20AF6217256A0ECF0074DA10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20AF6220256A103E0074DA10 /* PropStoredProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropStoredProperties.swift; sourceTree = "<group>"; };
 		20C120C3257DDE3200A3347A /* PropTypeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropTypeProperties.swift; sourceTree = "<group>"; };
+		20C3653025831EEF00FF1BE4 /* InhOverriding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhOverriding.swift; sourceTree = "<group>"; };
 		20DC4EC12581D0E200D7356A /* Inheritance */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Inheritance; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DC4EC32581D0E200D7356A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20E1A3A7252F58ED004DEC61 /* SwiftLanguage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftLanguage; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				20DC4EC32581D0E200D7356A /* main.swift */,
+				20C3653025831EEF00FF1BE4 /* InhOverriding.swift */,
 			);
 			path = Inheritance;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C3653125831EEF00FF1BE4 /* InhOverriding.swift in Sources */,
 				20DC4EC42581D0E200D7356A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
