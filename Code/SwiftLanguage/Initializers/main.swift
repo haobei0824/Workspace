@@ -7,5 +7,6 @@
 
 import Foundation
 
-testInit()
+testInitInheritance()
+//testInit()
 

@@ -43,6 +43,7 @@
 		20E1A3BA252F5987004DEC61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3B9252F5987004DEC61 /* main.swift */; };
 		20E1A3C1252F5A4D004DEC61 /* InitializerRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */; };
 		20EF2260255E38880012C9CD /* PrProtocolComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF225F255E38880012C9CD /* PrProtocolComposition.swift */; };
+		ABC8DE5225AD53AF001099AE /* InitializerInheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -165,6 +166,7 @@
 		20E1A3B9252F5987004DEC61 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializerRequirements.swift; sourceTree = "<group>"; };
 		20EF225F255E38880012C9CD /* PrProtocolComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolComposition.swift; sourceTree = "<group>"; };
+		ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializerInheritance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			children = (
 				20CD14A325871417001557FF /* main.swift */,
 				20CD14B02587192C001557FF /* IniInitialProterty.swift */,
+				ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */,
 			);
 			path = Initializers;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC8DE5225AD53AF001099AE /* InitializerInheritance.swift in Sources */,
 				20CD14B12587192C001557FF /* IniInitialProterty.swift in Sources */,
 				20CD14A425871417001557FF /* main.swift in Sources */,
 			);
