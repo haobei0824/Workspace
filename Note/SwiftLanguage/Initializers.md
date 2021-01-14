@@ -96,7 +96,7 @@ print("test default initializer: " , item)
 struct Size {
     var width = 0.0, height = 0.0
 }
-let twoByTwo = Size(width: 2.0, height: 2.0)”
+let twoByTwo = Size(width: 2.0, height: 2.0)
 ```
 
 
@@ -145,5 +145,13 @@ Designated initializers
 Convenience initializers
 
 - to call a designated initializer from the same class
-- 
 
+- call a convenience initizlizer
+
+![init-inheritance](./images/init-inheritance.png)
+
+#### Initializer Delegation
+
+- A designated initializer must call a designated initializer from its immediate superclass 
+- A convenience initializer must call another initializer from the same class
+- A convenience initializer must ultimately call a designated initializer
