@@ -1,3 +1,5 @@
+[TOC]
+
 ### Initial Values 
 
 Stored Properties
@@ -155,3 +157,23 @@ Convenience initializers
 - A designated initializer must call a designated initializer from its immediate superclass 
 - A convenience initializer must call another initializer from the same class
 - A convenience initializer must ultimately call a designated initializer
+
+#### Two-Phase Initialization
+
+- In the first phase, each stored property is assigned an initial value by the class that introduced it. 
+- second phase, each class is given the opportunity to customize its stored properties further before the new instance is considered ready for use
+
+
+Four safety-checks to make sure that two-phase initialization is completed without error
+
+- A designated initializer must ensure that all of the properties introduced by its class are initialized before it delegates up to a superclass initializer.
+- A designated initializer must delegate up to a superclass initializer before assigning a value to an inherited property. If it doesn’t, the new value the designated initializer assigns will be overwritten by the superclass as part of its own initialization.
+- A convenience initializer must delegate to another initializer before assigning a value to any property (including properties defined by the same class). If it doesn’t, the new value the convenience initializer assigns will be overwritten by its own class’s designated initializer.
+- An initializer cannot call any instance methods, read the values of any instance properties, or refer to self as a value until after the first phase of initialization is complete.
+
+#### Automatic Initializer Inheritance
+
+Assuming that you provide default values for any new properties you introduce in a subclass, the following two rules apply:
+
+- If your subclass doesn’t define any designated initializers, it automatically inherits all of its superclass designated initializers.
+- If your subclass provides an implementation of all of its superclass designated initializers—either by inheriting them as per rule 1, or by providing a custom implementation as part of its definition—then it automatically inherits all of the superclass convenience initializers.
