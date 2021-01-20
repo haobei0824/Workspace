@@ -44,6 +44,7 @@
 		20E1A3C1252F5A4D004DEC61 /* InitializerRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */; };
 		20EF2260255E38880012C9CD /* PrProtocolComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF225F255E38880012C9CD /* PrProtocolComposition.swift */; };
 		ABC8DE5225AD53AF001099AE /* InitializerInheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */; };
+		ABD67DFE25B7E25C009B7449 /* FailableInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD67DFD25B7E25C009B7449 /* FailableInitializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,6 +168,7 @@
 		20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializerRequirements.swift; sourceTree = "<group>"; };
 		20EF225F255E38880012C9CD /* PrProtocolComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolComposition.swift; sourceTree = "<group>"; };
 		ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializerInheritance.swift; sourceTree = "<group>"; };
+		ABD67DFD25B7E25C009B7449 /* FailableInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 				20CD14A325871417001557FF /* main.swift */,
 				20CD14B02587192C001557FF /* IniInitialProterty.swift */,
 				ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */,
+				ABD67DFD25B7E25C009B7449 /* FailableInitializer.swift */,
 			);
 			path = Initializers;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD67DFE25B7E25C009B7449 /* FailableInitializer.swift in Sources */,
 				ABC8DE5225AD53AF001099AE /* InitializerInheritance.swift in Sources */,
 				20CD14B12587192C001557FF /* IniInitialProterty.swift in Sources */,
 				20CD14A425871417001557FF /* main.swift in Sources */,
