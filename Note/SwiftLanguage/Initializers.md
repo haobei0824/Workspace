@@ -177,3 +177,24 @@ Assuming that you provide default values for any new properties you introduce in
 
 - If your subclass doesn’t define any designated initializers, it automatically inherits all of its superclass designated initializers.
 - If your subclass provides an implementation of all of its superclass designated initializers—either by inheriting them as per rule 1, or by providing a custom implementation as part of its definition—then it automatically inherits all of the superclass convenience initializers.
+
+
+
+### Failable Initializers
+
+To cope with initialization conditions that can fail, define one or more failable initializers as part of a class, structure, or enumeration definition. 
+
+-  placing a question mark after the init keyword (init?)
+- return nil within a failable initializer 
+
+
+```swift
+struct Animal {
+    let species: String
+    init?(species: String) {
+        if species.isEmpty { return nil }
+        self.species = species
+    }
+}
+```
+
