@@ -198,3 +198,59 @@ struct Animal {
 }
 ```
 
+#### Failable Initializers for Enumerations
+
+Enumerations with raw values automatically receive a failable initializer
+
+```swift
+enum InitTemperatureUnit {
+    case kelvin, celsius, fahrenheit
+    init?(symbol: Character) {
+        switch symbol {
+        case "K":
+            self = .kelvin
+        case "C":
+            self = .celsius
+        case "F":
+            self = .fahrenheit
+        default:
+            return nil
+        }
+    }
+}
+
+// has default init?(rawValue:)
+enum InitTemperatureUnit2: Character {
+    case kelvin = "K", celsius = "C", fahrenheit = "F"
+}
+```
+
+#### Delegation
+
+- A failable initializer of a class, structure, or enumeration can delegate across to another failable initializer from the same class, structure, or enumeration. 
+
+- Similarly, a subclass failable initializer can delegate up to a superclass failable initializer.”
+
+```swift
+class Product {
+    let name: String
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+
+class CartItem: Product {
+    let quantity: Int
+    init?(name: String, quantity: Int) {
+        if quantity < 1 { return nil }
+        self.quantity = quantity
+        super.init(name: name)
+    }
+}	 
+```
+
+#### Overriding
+
+“can override a superclass failable initializer in a subclass
+
