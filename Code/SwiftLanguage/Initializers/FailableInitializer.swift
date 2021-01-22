@@ -19,8 +19,35 @@ class InitDocument {
     }
 }
 
+enum InitTemperatureUnit {
+    case kelvin, celsius, fahrenheit
+    init?(symbol: Character) {
+        switch symbol {
+        case "K":
+            self = .kelvin
+        case "C":
+            self = .celsius
+        case "F":
+            self = .fahrenheit
+        default:
+            return nil
+        }
+    }
+}
+
+// has default init?(rawValue:)
+enum InitTemperatureUnit2: Character {
+    case kelvin = "K", celsius = "C", fahrenheit = "F"
+}
+
 
 func testFailableInitializer() -> Void {
     let d = InitDocument(name: "")
     print(d)
+    let unit = InitTemperatureUnit(symbol: "D")
+    print(unit)
+    var u2 = InitTemperatureUnit2(rawValue: "1")
+    print(u2)
+    var u3 = InitTemperatureUnit2.kelvin
+    print(u3)
 }

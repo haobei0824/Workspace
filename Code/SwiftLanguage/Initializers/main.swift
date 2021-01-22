@@ -7,6 +7,7 @@
 
 import Foundation
 
-testInitInheritance()
+testFailableInitializer()
+//testInitInheritance()
 //testInit()
 
