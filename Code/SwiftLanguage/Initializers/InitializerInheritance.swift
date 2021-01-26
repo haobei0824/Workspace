@@ -100,6 +100,28 @@ class InitShoppingItems: InitRecipeIngredient {
     }
 }
 
+class InitPerson {
+    let age : Int = {
+        let a = 1
+        let b = 2
+        print("InitPerson age function")
+        return a + b
+    }()
+    var name : String
+    
+    
+    required init() {
+        self.name = ""
+    }
+}
+
+class InitDoctor: InitPerson {
+    required init() {
+        super.init()
+        self.name = "doctor"
+    }
+}
+
 
 func testInitInheritance() -> Void {
     let bicycle = InitBicycle()
@@ -107,4 +129,9 @@ func testInitInheritance() -> Void {
     
     let h2 = InitHoverboard2(numberOfWheels: 2)
     
+    let p = InitPerson()
+    print("InitPerson age: \(p.age)")
+    print("InitPerson age: \(p.age)")
+    let p2 = InitPerson()
+    print("InitPerson age: \(p2.age)")
 }
