@@ -228,8 +228,9 @@ enum InitTemperatureUnit2: Character {
 #### Delegation
 
 - A failable initializer of a class, structure, or enumeration can delegate across to another failable initializer from the same class, structure, or enumeration. 
+- Similarly, a subclass failable initializer can delegate up to a superclass failable initializer.
+- A failable initializer can also delegate to a nonfailable initializer
 
-- Similarly, a subclass failable initializer can delegate up to a superclass failable initializer.”
 
 ```swift
 class Product {
@@ -252,5 +253,69 @@ class CartItem: Product {
 
 #### Overriding
 
-“can override a superclass failable initializer in a subclass
+- can override a superclass failable initializer in a subclass
+-  can override a superclass failable initializer with a subclass nonfailable initializer
+
+
+
+### Required Initializers
+
+- subclass of the class must implement that initializer
+
+- must also write the required modifier before every subclass implementation
+
+```swift
+class InitPerson {
+    let age : Int = {
+        let a = 1
+        let b = 2
+        print("InitPerson age function")
+        return a + b
+    }()
+    var name : String
+    
+    
+    required init() {
+        self.name = ""
+    }
+}
+
+class InitDoctor: InitPerson {
+    required init() {
+        super.init()
+        self.name = "doctor"
+    }
+}
+```
+
+
+
+### Setting a Default Property Value with a Closure or Function
+
+- can use a closure or global function to provide a customized default value for that property.”
+
+- Whenever a new instance of the type that the property belongs to is initialized, the closure or function is called
+- the closure or function in a instance can be called only once
+
+```swift
+class InitPerson {
+    let age : Int = {
+        let a = 1
+        let b = 2
+        print("InitPerson age function")
+        return a + b
+    }()
+    var name : String
+    
+    
+    required init() {
+        self.name = ""
+    }
+}
+```
+
+
+
+
+
 
