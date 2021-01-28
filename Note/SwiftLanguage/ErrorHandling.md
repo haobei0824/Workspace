@@ -24,5 +24,17 @@ write the`` throws`` keyword in the function’s declaration after its parameter
 - method
 - initializer
 
+```swift
+func canThrowErrors() throws -> String
+```
 
+#### Throw Errors
+
+use a ``throw`` statement to throw an error
+
+```swift
+func canThrowErrors() throws -> Void {
+    throw VendingMachineError.insufficientFunds(coinsNeeded: 5)
+}
+```
 
