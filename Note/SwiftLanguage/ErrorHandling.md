@@ -38,3 +38,25 @@ func canThrowErrors() throws -> Void {
 }
 ```
 
+#### call throwing function
+
+- Use ``try`` keyword  in front of throwing function
+- Use ``do-catch``, if caller handle all error, the caller do not need declare `throws`
+
+```swift
+do {
+    try expression
+    statements
+} catch pattern 1 {
+    statements
+} catch pattern 2 where condition {
+    statements
+} catch pattern 3, pattern 4 where condition {
+    statements
+} catch {
+    statements
+} 
+```
+
+
+
