@@ -44,6 +44,7 @@
 		20E1A3C1252F5A4D004DEC61 /* InitializerRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1A3C0252F5A4D004DEC61 /* InitializerRequirements.swift */; };
 		20EF2260255E38880012C9CD /* PrProtocolComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF225F255E38880012C9CD /* PrProtocolComposition.swift */; };
 		AB61C6AF25C119E100A0F249 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61C6AE25C119E100A0F249 /* main.swift */; };
+		ABB893F925C7AF82005B60E1 /* HandlingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB893F825C7AF82005B60E1 /* HandlingErrors.swift */; };
 		ABC8DE5225AD53AF001099AE /* InitializerInheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */; };
 		ABD67DFE25B7E25C009B7449 /* FailableInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD67DFD25B7E25C009B7449 /* FailableInitializer.swift */; };
 /* End PBXBuildFile section */
@@ -179,6 +180,7 @@
 		20EF225F255E38880012C9CD /* PrProtocolComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrProtocolComposition.swift; sourceTree = "<group>"; };
 		AB61C6AC25C119E100A0F249 /* ErrorHandling */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ErrorHandling; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB61C6AE25C119E100A0F249 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ABB893F825C7AF82005B60E1 /* HandlingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingErrors.swift; sourceTree = "<group>"; };
 		ABC8DE5125AD53AF001099AE /* InitializerInheritance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializerInheritance.swift; sourceTree = "<group>"; };
 		ABD67DFD25B7E25C009B7449 /* FailableInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -380,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				AB61C6AE25C119E100A0F249 /* main.swift */,
+				ABB893F825C7AF82005B60E1 /* HandlingErrors.swift */,
 			);
 			path = ErrorHandling;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB61C6AF25C119E100A0F249 /* main.swift in Sources */,
+				ABB893F925C7AF82005B60E1 /* HandlingErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
