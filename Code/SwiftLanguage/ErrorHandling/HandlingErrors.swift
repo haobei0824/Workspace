@@ -49,6 +49,16 @@ class ErrVendingMachine {
         print("Dispensing \(name)")
 
     }
+    
+    func vend2() throws -> Int {
+        let a = 2
+        if a > 4 {
+            throw ErrVendingMachineError.outOfStock
+        }
+        
+
+        return 2
+    }
 }
 
 let favoriteSnacks = [
@@ -81,6 +91,34 @@ func buyFavoriteSnack3(person: String, vendingMachine: ErrVendingMachine)  {
     do {
         try vendingMachine.vend(itemNamed: snackName)
     } catch {
+        
+    }
+}
+
+func testCallReturnFun1() throws {
+    let machine = ErrVendingMachine()
+    let result = try machine.vend2()    // 如果error，代码会中断
+    print("result : " + "\(result)")
+}
+
+func testCallReturnFun2() {
+    let machine = ErrVendingMachine()
+    let result = try? machine.vend2()    // 如果error，代码不会中断
+    print("result : " + "\(result)")
+}
+
+func testCallReturnFun3() {
+    let machine = ErrVendingMachine()
+    let result = try! machine.vend2()    // 如果error，程序异常
+    print("result : " + "\(result)")
+}
+
+func testErrorHandling() -> Void {
+    do {
+//        try testCallReturnFun1()
+        try testCallReturnFun2()
+        try testCallReturnFun3()
+    } catch  {
         
     }
 }
