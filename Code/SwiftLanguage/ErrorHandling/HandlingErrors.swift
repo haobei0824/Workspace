@@ -56,8 +56,14 @@ class ErrVendingMachine {
             throw ErrVendingMachineError.outOfStock
         }
         
-
         return 2
+    }
+    
+    func vend3() throws -> Void {
+        let a = 2
+        if a > 1 {
+            throw ErrVendingMachineError.outOfStock
+        }
     }
 }
 
@@ -97,29 +103,57 @@ func buyFavoriteSnack3(person: String, vendingMachine: ErrVendingMachine)  {
 
 func testCallReturnFun1() throws {
     let machine = ErrVendingMachine()
-    let result = try machine.vend2()    // 如果error，代码会中断
+    let result = try machine.vend2()    // 如果error，代码会中断，后面的代码不会执行，程序正常运行
     print("result : " + "\(result)")
 }
 
 func testCallReturnFun2() {
     let machine = ErrVendingMachine()
-    let result = try? machine.vend2()    // 如果error，代码不会中断
+    let result = try? machine.vend2()    // 如果error，代码不会中断，后面的代码继续执行，程序正常运行
     print("result : " + "\(result)")
 }
 
+
 func testCallReturnFun3() {
     let machine = ErrVendingMachine()
-    let result = try! machine.vend2()    // 如果error，程序异常
+    let result = try! machine.vend2()    // 如果error，程序退出
     print("result : " + "\(result)")
+}
+
+func testThrowFunc1() throws {
+    let machine = ErrVendingMachine()
+    try machine.vend3()    // 如果error，代码会中断，后面的代码不会执行，程序正常运行
+    print("testThrowFunc1 no throw")
+}
+
+func testThrowFunc2() {
+    let machine = ErrVendingMachine()
+    try? machine.vend3()    // 如果error，代码不会中断，后面的代码继续执行，程序正常运行
+    print("testThrowFunc2 finish")
+}
+
+
+func testThrowFunc3() {
+    let machine = ErrVendingMachine()
+    try! machine.vend3()    // 如果error，程序退出
+    print("testThrowFunc1 no throw")
 }
 
 func testErrorHandling() -> Void {
     do {
 //        try testCallReturnFun1()
-        try testCallReturnFun2()
-        try testCallReturnFun3()
+//        try testCallReturnFun2()
+//        try testCallReturnFun3()
     } catch  {
         
+    }
+    
+    do {
+        try? testThrowFunc1()
+//        try testThrowFunc2()
+//        testThrowFunc3()
+    } catch  {
+        print("catch error")
     }
 }
 
