@@ -40,8 +40,15 @@ func canThrowErrors() throws -> Void {
 
 #### call throwing function
 
-- Use ``try`` keyword  in front of throwing function
-- Use ``do-catch``, if caller handle all error, the caller do not need declare `throws`
+- Use ``try`` keyword  in front of throwing function, it will pass error to caller function, caller function need declare `throws`
+- Use ``try?`` keyword  in front of throwing function, it will not pass error. Caller function no need declare `throws`
+- Use ``try!`` keyword  in front of throwing function, it will crash if error happen,. caller function no need declare `throws`
+
+
+
+#### Handling Errors Using Do-Catch
+
+- Use ``do-catch``, if caller handle all error, the caller function do not need declare `throws`
 
 ```swift
 do {
@@ -56,6 +63,36 @@ do {
 } catch {
     statements
 } 
+```
+
+```swift
+// 未处理error，该函数需要声明为throws
+func buyFavoriteSnack(person: String, vendingMachine: ErrVendingMachine) throws {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    try vendingMachine.vend(itemNamed: snackName)
+}
+
+// 处理了一种错误，该函数需要声明为throws
+func buyFavoriteSnack2(person: String, vendingMachine: ErrVendingMachine) throws  {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    
+    do {
+        try vendingMachine.vend(itemNamed: snackName)
+    } catch ErrVendingMachineError.invalidSelection {
+        
+    }
+}
+
+// 处理了所有错误，该函数就可以声明为no throws
+func buyFavoriteSnack3(person: String, vendingMachine: ErrVendingMachine)  {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    
+    do {
+        try vendingMachine.vend(itemNamed: snackName)
+    } catch {
+        
+    }
+}
 ```
 
 
