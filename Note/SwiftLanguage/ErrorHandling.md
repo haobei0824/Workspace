@@ -1,6 +1,6 @@
 [TOC]
 
-### Basic
+
 
 #### Representing Errors
 
@@ -96,4 +96,44 @@ func buyFavoriteSnack3(person: String, vendingMachine: ErrVendingMachine)  {
 ```
 
 
+
+#### Hand return function
+
+- `try` to get  an  value, if error happen , it will throw error
+- `try?` to get  an optional value
+- `try!` to get value，if error happen，it will crash
+
+```swift
+    let result = try machine.vend2()    // 如果error，代码会中断，后面的代码不会执行，程序正常运行
+    print("result : " + "\(result)")
+
+    let result = try? machine.vend2()    // 如果error，代码不会中断，后面的代码继续执行，程序正常运行
+    print("result : " + "\(result)")
+    
+    let result = try! machine.vend2()    // 如果error，程序退出
+    print("result : " + "\(result)")
+```
+
+#### Specifying Cleanup Actions
+
+`defer`
+
+- execute a set of statements just before code execution leaves the current block of code.
+- regardless of how execution leaves the current block of code—whether it leaves because an error was thrown or because of a statement such as return or break 
+
+
+```swift
+func processFile(filename: String) throws {
+    if exists(filename) {
+        let file = open(filename)
+        defer {
+            close(file)
+        }
+        while let line = try file.readline() {
+            // Work with the file.
+        }
+        // close(file) is called here, at the end of the scope.
+    }
+} 
+```
 
