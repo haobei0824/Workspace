@@ -44,20 +44,14 @@ async function createUser() {
     const salt = await bcrypt.genSalt(10);
     const pass = await bcrypt.hash('123456', salt);
     const user = await User.create({
-        username: 'hello-node',
-        email: 'hello-node1@gmail.com',
+        username: 'hello1',
+        email: 'hello1@sina.com',
         password: pass,
         role: 'admin',
         state: 0
     });
+    console.log('create a user ');
 }
-
-function deleteUser() {
-    User.deleteOne({ email: 'hello-node@gmail.com' });
-}
-
-// deleteUser();
-
 
 // createUser();
 
