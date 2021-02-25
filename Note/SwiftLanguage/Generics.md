@@ -128,3 +128,91 @@ struct Stack<Element>: Container {
 }
 ```
 
+####  Adding Constraints to an Associated Type
+
+```swift
+protocol Container {
+    associatedtype Item: Equatable
+    mutating func append(_ item: Item)
+    var count: Int { get }
+    subscript(i: Int) -> Item { get }
+}
+```
+
+####  Using a Protocol in Its Associated Type’s Constraints
+
+A protocol can appear as part of its own requirements.
+
+```swift
+protocol SuffixableContainer: Container {
+    associatedtype Suffix: SuffixableContainer where Suffix.Item == Item
+    func suffix(_ size: Int) -> Suffix
+}
+
+extension Stack: SuffixableContainer {
+    func suffix(_ size: Int) -> Stack {
+        var result = Stack()
+        for index in (count-size)..<count {
+            result.append(self[index])
+        }
+        return result
+    }
+    // Inferred that Suffix is Stack.
+}
+```
+
+
+
+### Where Clauses
+
+Used in
+
+- function
+- type
+- associated type
+
+```swift
+func allItemsMatch<C1: Container, C2: Container>
+    (_ someContainer: C1, _ anotherContainer: C2) -> Bool
+    where C1.Item == C2.Item, C1.Item: Equatable {
+
+        // Check that both containers contain the same number of items.
+        if someContainer.count != anotherContainer.count {
+            return false
+        }
+
+        // Check each pair of items to see if they're equivalent.
+        for i in 0..<someContainer.count {
+            if someContainer[i] != anotherContainer[i] {
+                return false
+            }
+        }
+
+        // All items match, so return true.
+        return true
+}
+```
+
+#### Extensions 
+
+can also use a generic where clause as part of an extension
+
+```swift
+// class
+extension Stack where Element: Equatable {
+    func isTop(_ item: Element) -> Bool {
+        guard let topItem = items.last else {
+            return false
+        }
+        return topItem == item
+    }
+} 
+
+// protocol
+extension Container where Item: Equatable {
+    func startsWith(_ item: Item) -> Bool {
+        return count >= 1 && self[0] == item
+    }
+}
+```
+
