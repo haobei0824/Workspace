@@ -197,6 +197,9 @@ func allItemsMatch<C1: Container, C2: Container>
 
 can also use a generic where clause as part of an extension
 
+- Extension class, struct
+- Extension protocol
+
 ```swift
 // class
 extension Stack where Element: Equatable {
@@ -214,5 +217,52 @@ extension Container where Item: Equatable {
         return count >= 1 && self[0] == item
     }
 }
+```
+
+can write a generic where clause on
+
+- a subscript of a generic type 
+- a method in an extension to a generic type
+
+```swift
+extension Container {
+    func average() -> Double where Item == Int {
+        var sum = 0.0
+        for index in 0..<count {
+            sum += Double(self[index])
+        }
+        return sum / Double(count)
+    }
+    func endsWith(_ item: Item) -> Bool where Item: Equatable {
+        return count >= 1 && self[count-1] == item
+    }
+}
+
+extension Container {
+    subscript<Indices: Sequence>(indices: Indices) -> [Item]
+        where Indices.Iterator.Element == Int {
+            var result = [Item]()
+            for index in indices {
+                result.append(self[index])
+            }
+            return result
+    }
+} 
+```
+
+#### Associated Types
+
+```swift
+protocol Container {
+    associatedtype Item
+    mutating func append(_ item: Item)
+    var count: Int { get }
+    subscript(i: Int) -> Item { get }
+
+    associatedtype Iterator: IteratorProtocol where Iterator.Element == Item
+    func makeIterator() -> Iterator
+}
+
+protocol ComparableContainer: Container where Item: Comparable { } 
 ```
 
