@@ -50,6 +50,9 @@ extension ProductListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let item = self.products[indexPath.row]
+        let detailViewController = ProductDetailViewController(item: item)
+        self.navigationController!.pushViewController(detailViewController, animated: true)
     }
 }
 

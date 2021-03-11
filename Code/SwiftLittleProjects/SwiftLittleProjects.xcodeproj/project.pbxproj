@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB14C36525F723CA009FC06D /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14C36425F723CA009FC06D /* ProductItem.swift */; };
+		AB6915A125F9C97900C1B9E4 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6915A025F9C97900C1B9E4 /* ProductDetailViewController.swift */; };
 		AB732CF625F1DF4100E68D73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB732CF525F1DF4100E68D73 /* AppDelegate.swift */; };
 		AB732CF825F1DF4100E68D73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB732CF725F1DF4100E68D73 /* SceneDelegate.swift */; };
 		AB732CFD25F1DF4100E68D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB732CFB25F1DF4100E68D73 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		AB14C36425F723CA009FC06D /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
+		AB6915A025F9C97900C1B9E4 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		AB732CF325F1DF4100E68D73 /* 01-Products.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-Products.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB732CF525F1DF4100E68D73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB732CF725F1DF4100E68D73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,12 +73,14 @@
 				AB732CF725F1DF4100E68D73 /* SceneDelegate.swift */,
 				AB732D0925F1DF6300E68D73 /* TabBarController.swift */,
 				AB732D0F25F1E17700E68D73 /* ProductListViewController.swift */,
+				AB6915A025F9C97900C1B9E4 /* ProductDetailViewController.swift */,
 				AB732D1325F1E18E00E68D73 /* AboutViewController.swift */,
 				AB14C36425F723CA009FC06D /* ProductItem.swift */,
 				AB732CFB25F1DF4100E68D73 /* Main.storyboard */,
 				AB732CFE25F1DF4200E68D73 /* Assets.xcassets */,
 				AB732D0025F1DF4200E68D73 /* LaunchScreen.storyboard */,
 				AB732D0325F1DF4200E68D73 /* Info.plist */,
+				AB8F1B8C25EF3F330013AE9D /* Products */,
 			);
 			path = "01-Products";
 			sourceTree = "<group>";
@@ -86,7 +90,6 @@
 			children = (
 				AB8F1B8D25EF3F330013AE9D /* SwiftLittleProjects */,
 				AB732CF425F1DF4100E68D73 /* 01-Products */,
-				AB8F1B8C25EF3F330013AE9D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +100,7 @@
 				AB732CF325F1DF4100E68D73 /* 01-Products.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AB8F1B8D25EF3F330013AE9D /* SwiftLittleProjects */ = {
@@ -216,6 +220,7 @@
 			files = (
 				AB14C36525F723CA009FC06D /* ProductItem.swift in Sources */,
 				AB732D1425F1E18E00E68D73 /* AboutViewController.swift in Sources */,
+				AB6915A125F9C97900C1B9E4 /* ProductDetailViewController.swift in Sources */,
 				AB732D0A25F1DF6300E68D73 /* TabBarController.swift in Sources */,
 				AB732D1025F1E17700E68D73 /* ProductListViewController.swift in Sources */,
 				AB732CF625F1DF4100E68D73 /* AppDelegate.swift in Sources */,
