@@ -27,7 +27,7 @@ class ProductListViewController: UIViewController {
         self.products.append(ProductItem(name: "1984 Moto Portable", cellImageName: "image-cell4", fullscreenImageName: "phone-fullscreen4"))
         
         self.tableView = UITableView(frame: CGRect(origin: CGPoint.zero, size: self.view.bounds.size), style: .plain)
-        self.tableView.backgroundColor = .blue
+        self.tableView.backgroundColor = .gray
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: kProductCellIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -52,6 +52,7 @@ extension ProductListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = self.products[indexPath.row]
         let detailViewController = ProductDetailViewController(item: item)
+        detailViewController.hidesBottomBarWhenPushed = true
         self.navigationController!.pushViewController(detailViewController, animated: true)
     }
 }
