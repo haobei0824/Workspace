@@ -23,6 +23,12 @@
 		AB8F1B9625EF3F330013AE9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F1B9425EF3F330013AE9D /* Main.storyboard */; };
 		AB8F1B9825EF3F330013AE9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8F1B9725EF3F330013AE9D /* Assets.xcassets */; };
 		AB8F1B9B25EF3F330013AE9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F1B9925EF3F330013AE9D /* LaunchScreen.storyboard */; };
+		ABB674EC26005E1900474EB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB674EB26005E1900474EB2 /* AppDelegate.swift */; };
+		ABB674EE26005E1900474EB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB674ED26005E1900474EB2 /* SceneDelegate.swift */; };
+		ABB674F026005E1900474EB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB674EF26005E1900474EB2 /* ViewController.swift */; };
+		ABB674F326005E1900474EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB674F126005E1900474EB2 /* Main.storyboard */; };
+		ABB674F526005E1B00474EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB674F426005E1B00474EB2 /* Assets.xcassets */; };
+		ABB674F826005E1B00474EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB674F626005E1B00474EB2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,14 @@
 		AB8F1B9725EF3F330013AE9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8F1B9A25EF3F330013AE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8F1B9C25EF3F330013AE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB674E926005E1900474EB2 /* 02-Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "02-Stopwatch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABB674EB26005E1900474EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABB674ED26005E1900474EB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ABB674EF26005E1900474EB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABB674F226005E1900474EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABB674F426005E1B00474EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABB674F726005E1B00474EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ABB674F926005E1B00474EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AB8F1B8825EF3F320013AE9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB674E626005E1900474EB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,6 +111,7 @@
 			children = (
 				AB8F1B8D25EF3F330013AE9D /* SwiftLittleProjects */,
 				AB732CF425F1DF4100E68D73 /* 01-Products */,
+				ABB674EA26005E1900474EB2 /* 02-Stopwatch */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +120,7 @@
 			children = (
 				AB8F1B8B25EF3F330013AE9D /* SwiftLittleProjects.app */,
 				AB732CF325F1DF4100E68D73 /* 01-Products.app */,
+				ABB674E926005E1900474EB2 /* 02-Stopwatch.app */,
 			);
 			name = Products;
 			path = ..;
@@ -115,6 +138,20 @@
 				AB8F1B9C25EF3F330013AE9D /* Info.plist */,
 			);
 			path = SwiftLittleProjects;
+			sourceTree = "<group>";
+		};
+		ABB674EA26005E1900474EB2 /* 02-Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				ABB674EB26005E1900474EB2 /* AppDelegate.swift */,
+				ABB674ED26005E1900474EB2 /* SceneDelegate.swift */,
+				ABB674EF26005E1900474EB2 /* ViewController.swift */,
+				ABB674F126005E1900474EB2 /* Main.storyboard */,
+				ABB674F426005E1B00474EB2 /* Assets.xcassets */,
+				ABB674F626005E1B00474EB2 /* LaunchScreen.storyboard */,
+				ABB674F926005E1B00474EB2 /* Info.plist */,
+			);
+			path = "02-Stopwatch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +191,23 @@
 			productReference = AB8F1B8B25EF3F330013AE9D /* SwiftLittleProjects.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ABB674E826005E1900474EB2 /* 02-Stopwatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB674FC26005E1B00474EB2 /* Build configuration list for PBXNativeTarget "02-Stopwatch" */;
+			buildPhases = (
+				ABB674E526005E1900474EB2 /* Sources */,
+				ABB674E626005E1900474EB2 /* Frameworks */,
+				ABB674E726005E1900474EB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "02-Stopwatch";
+			productName = "02-Stopwatch";
+			productReference = ABB674E926005E1900474EB2 /* 02-Stopwatch.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,6 +221,9 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					AB8F1B8A25EF3F320013AE9D = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					ABB674E826005E1900474EB2 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -186,6 +243,7 @@
 			targets = (
 				AB8F1B8A25EF3F320013AE9D /* SwiftLittleProjects */,
 				AB732CF225F1DF4100E68D73 /* 01-Products */,
+				ABB674E826005E1900474EB2 /* 02-Stopwatch */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +266,16 @@
 				AB8F1B9B25EF3F330013AE9D /* LaunchScreen.storyboard in Resources */,
 				AB8F1B9825EF3F330013AE9D /* Assets.xcassets in Resources */,
 				AB8F1B9625EF3F330013AE9D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB674E726005E1900474EB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB674F826005E1B00474EB2 /* LaunchScreen.storyboard in Resources */,
+				ABB674F526005E1B00474EB2 /* Assets.xcassets in Resources */,
+				ABB674F326005E1900474EB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +303,16 @@
 				AB8F1B9325EF3F330013AE9D /* ViewController.swift in Sources */,
 				AB8F1B8F25EF3F330013AE9D /* AppDelegate.swift in Sources */,
 				AB8F1B9125EF3F330013AE9D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABB674E526005E1900474EB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB674F026005E1900474EB2 /* ViewController.swift in Sources */,
+				ABB674EC26005E1900474EB2 /* AppDelegate.swift in Sources */,
+				ABB674EE26005E1900474EB2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +347,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				AB8F1B9A25EF3F330013AE9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ABB674F126005E1900474EB2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB674F226005E1900474EB2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABB674F626005E1B00474EB2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB674F726005E1B00474EB2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -464,6 +558,42 @@
 			};
 			name = Release;
 		};
+		ABB674FA26005E1B00474EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "02-Stopwatch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiayou.-2-Stopwatch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABB674FB26005E1B00474EB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "02-Stopwatch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jiayou.-2-Stopwatch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,6 +620,15 @@
 			buildConfigurations = (
 				AB8F1BA025EF3F330013AE9D /* Debug */,
 				AB8F1BA125EF3F330013AE9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABB674FC26005E1B00474EB2 /* Build configuration list for PBXNativeTarget "02-Stopwatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABB674FA26005E1B00474EB2 /* Debug */,
+				ABB674FB26005E1B00474EB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
