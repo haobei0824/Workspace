@@ -17,6 +17,8 @@ import UIKit
 
 class ViewController: UIViewController {
     var timer: DispatchSourceTimer!
+    var running = false
+    
     
 
     override func viewDidLoad() {
@@ -34,20 +36,35 @@ class ViewController: UIViewController {
         let currentTime1 = DispatchTime.now()
         
         timer.setEventHandler {
-            print("123")
+//            print("123")
             let currentTime2 = DispatchTime.now()
-            
             let diff = currentTime1.distance(to: currentTime2)
             print("diff: " + "\(diff)")
             
         }
-        timer.schedule(deadline: DispatchTime.now(), repeating: 2)
+        timer.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.milliseconds(10))
         timer.resume()
         self.timer = timer
+        self.running = true
+        
+        let t1 = DispatchTimeInterval.microseconds(10)
+        print("t1 : " + "\(t1)")
+//        let t2 = DispatchTimeInterval.microseconds(10)
+        
+        
     }
     
     @objc func onTap() -> Void {
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.running {
+            self.timer.suspend()
+        } else {
+            self.timer.resume()
+        }
+        self.running = !self.running
     }
 
 }

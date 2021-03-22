@@ -14,14 +14,40 @@ enum WatchStatus {
 }
 
 struct WatchInterval {
-    var start: Int64
-    var end: Int64
-    var laps : [Int64]
+    var start: UInt64
+    var end: UInt64
+    var laps : [UInt64]
     
-//    init() {
-//        self.start =
-//    }
+    init() {
+        self.start = DispatchTime.now().rawValue
+        self.end = DispatchTime.now().rawValue
+        self.laps = [UInt64]()
+    }
+}
+
+struct TimeItem {
+    var minute = "00"
+    var seconds = "00"
+    var milliseconds = "00"
+}
+
+class Watch {
     
+    func start() -> Void {
+        
+    }
+    
+    func pause() -> Void {
+        
+    }
+    
+    func reset() -> Void {
+        
+    }
+    
+    func lap() -> Void {
+        
+    }
 }
 
 //dispatch_time_t
