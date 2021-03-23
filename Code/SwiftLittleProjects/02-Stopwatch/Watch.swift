@@ -32,7 +32,34 @@ struct TimeItem {
 }
 
 class Watch {
+    private var timer : DispatchSourceTimer
+    private var status : WatchStatus
+    private var intervals = [WatchInterval]()
     
+    deinit {
+        self.timer.setEventHandler(handler: nil)
+        self.timer.cancel()
+        
+    }
+    
+    init() {
+        self.status = WatchStatus.INITIAL
+        self.timer = DispatchSource.makeTimerSource()
+        self.timer.setEventHandler {
+            [unowned  self] in
+            
+            let count = self.intervals.count
+            if count > 0 {
+                let lastItem = self.intervals.last
+                
+            }
+        }
+    }
+    
+}
+
+
+extension Watch {
     func start() -> Void {
         
     }
@@ -49,6 +76,21 @@ class Watch {
         
     }
 }
+
+extension Watch {
+    func currentLapTime() -> TimeItem {
+        
+    }
+    
+    func totalTime() -> TimeItem {
+        
+    }
+    
+    func lapItems() -> [TimeItem] {
+        
+    }
+}
+
 
 //dispatch_time_t
 //dispatch_source_set_timer
