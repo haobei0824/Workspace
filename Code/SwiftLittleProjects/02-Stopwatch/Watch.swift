@@ -48,12 +48,17 @@ class Watch {
         self.timer.setEventHandler {
             [unowned  self] in
             
-            let count = self.intervals.count
-            if count > 0 {
-                let lastItem = self.intervals.last
+            if var lastItem = self.intervals.last {
+                lastItem.end = DispatchTime.now().rawValue
                 
+                self.intervals.removeLast()
+                self.intervals.append(lastItem)
+            } else {
+                let item = WatchInterval()
+                self.intervals.append(item)
             }
         }
+        self.status = WatchStatus.INITIAL
     }
     
 }
@@ -61,15 +66,29 @@ class Watch {
 
 extension Watch {
     func start() -> Void {
-        
+        if self.status == WatchStatus.INITIAL || self.status == WatchStatus.SUSPENDED {
+            self.timer.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.milliseconds(10))
+            self.timer.resume()
+            self.status = WatchStatus.RUNNING
+        }
     }
     
     func pause() -> Void {
+        if self.status != WatchStatus.RUNNING {
+            return
+        }
         
+        self.timer.suspend()
+        self.status = WatchStatus.SUSPENDED
     }
     
     func reset() -> Void {
+        if self.status != WatchStatus.SUSPENDED {
+            return
+        }
         
+        self.timer.suspend()
+        self.status = WatchStatus.INITIAL
     }
     
     func lap() -> Void {
