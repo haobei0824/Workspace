@@ -53,9 +53,6 @@ class Watch {
                 
                 self.intervals.removeLast()
                 self.intervals.append(lastItem)
-            } else {
-                let item = WatchInterval()
-                self.intervals.append(item)
             }
         }
         self.status = WatchStatus.INITIAL
@@ -67,6 +64,9 @@ class Watch {
 extension Watch {
     func start() -> Void {
         if self.status == WatchStatus.INITIAL || self.status == WatchStatus.SUSPENDED {
+            let item = WatchInterval()
+            self.intervals.append(item)
+            
             self.timer.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.milliseconds(10))
             self.timer.resume()
             self.status = WatchStatus.RUNNING
@@ -87,29 +87,63 @@ extension Watch {
             return
         }
         
+        self.intervals.removeAll()
+        
         self.timer.suspend()
         self.status = WatchStatus.INITIAL
     }
     
     func lap() -> Void {
+        if self.status != WatchStatus.RUNNING {
+            return
+        }
         
+        if var lastItem = self.intervals.last {
+            lastItem.laps.append(DispatchTime.now().rawValue)
+            lastItem.end = DispatchTime.now().rawValue
+            
+            self.intervals.removeLast()
+            self.intervals.append(lastItem)
+        }
     }
 }
 
 extension Watch {
     func currentLapTime() -> TimeItem {
+        var time = TimeItem()
         
+        if let lastItem = self.intervals.last {
+            let naSeconds = (lastItem.end - lastItem.start)
+            print("naSeconds:" + "\(naSeconds)")
+            let tmpMilliseconds = (naSeconds / 10_000_000)
+            time.milliseconds = tmpMilliseconds.twoText()
+            
+            let totalSeconds = naSeconds / 1000_000_000
+            time.seconds =  (totalSeconds % 60).twoText()
+            time.minute = (totalSeconds / 60).twoText()
+        }
+        
+        return time
     }
     
     func totalTime() -> TimeItem {
+//        var time = TimeItem()
         
+        return TimeItem()
     }
     
     func lapItems() -> [TimeItem] {
-        
+        return [TimeItem]()
     }
 }
 
+extension UInt64 {
+    func twoText() -> String {
+        let first = self % 10
+        let second = (self / 10) % 10
+        return "\(second)" +  "\(first)"
+    }
+}
 
 //dispatch_time_t
 //dispatch_source_set_timer

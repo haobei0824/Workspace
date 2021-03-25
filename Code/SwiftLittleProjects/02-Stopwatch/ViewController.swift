@@ -18,6 +18,7 @@ import UIKit
 class ViewController: UIViewController {
     var timer: DispatchSourceTimer!
     var running = false
+    var watch: Watch!
     
     
 
@@ -32,6 +33,12 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(tap)
         self.view .addSubview(view)
         
+        self.watch = Watch()
+        self.watch.start()
+        
+    }
+    
+    func testTimer() -> Void {
         let timer = DispatchSource.makeTimerSource()
         let currentTime1 = DispatchTime.now()
         
@@ -49,9 +56,6 @@ class ViewController: UIViewController {
         
         let t1 = DispatchTimeInterval.microseconds(10)
         print("t1 : " + "\(t1)")
-//        let t2 = DispatchTimeInterval.microseconds(10)
-        
-        
     }
     
     @objc func onTap() -> Void {
@@ -59,12 +63,8 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if self.running {
-            self.timer.suspend()
-        } else {
-            self.timer.resume()
-        }
-        self.running = !self.running
+        let time = self.watch.currentLapTime()
+        print("time:" + "\(time)")
     }
 
 }
