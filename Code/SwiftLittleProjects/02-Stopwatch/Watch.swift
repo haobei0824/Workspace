@@ -29,6 +29,13 @@ struct TimeItem {
     var minute = "00"
     var seconds = "00"
     var milliseconds = "00"
+    
+    func timeText() -> String {
+        let isZero = (minute == "00") && (seconds == "00") && (milliseconds == "00")
+        let separa = isZero ? ":" : "."
+
+        return minute + ":" + seconds + separa + milliseconds
+    }
 }
 
 class Watch {
@@ -106,34 +113,88 @@ extension Watch {
             self.intervals.append(lastItem)
         }
     }
+    
+    func watchStatus() -> WatchStatus {
+        return self.status
+    }
 }
 
 extension Watch {
     func currentLapTime() -> TimeItem {
-        var time = TimeItem()
-        
-        if let lastItem = self.intervals.last {
-            let naSeconds = (lastItem.end - lastItem.start)
-            print("naSeconds:" + "\(naSeconds)")
-            let tmpMilliseconds = (naSeconds / 10_000_000)
-            time.milliseconds = tmpMilliseconds.twoText()
-            
-            let totalSeconds = naSeconds / 1000_000_000
-            time.seconds =  (totalSeconds % 60).twoText()
-            time.minute = (totalSeconds / 60).twoText()
+        if self.intervals.count == 0 {
+            return TimeItem()
         }
+        
+        var latestLap : UInt64? = nil
+        var totalSeconds:UInt64 = 0
+        var currentLapSeconds : UInt64  = 0
+        
+        for interval in self.intervals {
+            if interval.laps.count > 0 {
+                latestLap = interval.laps.last
+                currentLapSeconds = interval.end - latestLap!
+            } else {
+                let intervalSeconds = interval.end - interval.start
+                
+                totalSeconds += intervalSeconds
+                currentLapSeconds += intervalSeconds
+            }
+        }
+        
+        if latestLap == nil {
+            return self.timeItem(WithNanoseconds: totalSeconds)
+        }
+        
+        return self.timeItem(WithNanoseconds: currentLapSeconds)
+    }
+    
+    func totalTime() -> TimeItem {
+        var time = TimeItem()
+        if self.intervals.count == 0 {
+            return time
+        }
+        
+        var nanoSeconds:UInt64 = 0
+        for interval in self.intervals {
+            nanoSeconds += (interval.end - interval.start)
+        }
+        time = self.timeItem(WithNanoseconds: nanoSeconds)
         
         return time
     }
     
-    func totalTime() -> TimeItem {
-//        var time = TimeItem()
+    func lapItems() -> [TimeItem] {
+        if self.intervals.count == 0 {
+            return [TimeItem]()
+        }
         
-        return TimeItem()
+        var lapTimeItems = [TimeItem]()
+        var previousNano: UInt64 = 0
+        
+        for interval in self.intervals {
+            let start = interval.start
+            for lapTime in interval.laps {
+                lapTimeItems.append(self.timeItem(WithNanoseconds: (previousNano + (lapTime - start))))
+            }
+            
+            previousNano += interval.end - start
+        }
+        
+        return lapTimeItems
     }
     
-    func lapItems() -> [TimeItem] {
-        return [TimeItem]()
+    func timeItem(WithNanoseconds nanoSeconds:UInt64) -> TimeItem {
+        var time = TimeItem()
+        
+        print("naSeconds:" + "\(nanoSeconds)")
+        let tmpMilliseconds = (nanoSeconds / 10_000_000)
+        time.milliseconds = tmpMilliseconds.twoText()
+        
+        let totalSeconds = nanoSeconds / 1000_000_000
+        time.seconds =  (totalSeconds % 60).twoText()
+        time.minute = (totalSeconds / 60).twoText()
+        
+        return time
     }
 }
 

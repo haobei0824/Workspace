@@ -18,24 +18,57 @@ import UIKit
 class ViewController: UIViewController {
     var timer: DispatchSourceTimer!
     var running = false
-    var watch: Watch!
     
+    var watch = Watch()
+    var lapLabel = UILabel()
+    var totalLabel = UILabel()
+    var button1 = UIButton(type: .custom)
+    var button2 = UIButton(type: .custom)
+    var tableView = UITableView(frame: CGRect.zero, style: .plain)
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap));
-        self.view.addGestureRecognizer(tap)
         
-        let view = UIView(frame: CGRect(x: 0, y: 100, width: self.view.bounds.size.width, height: 100))
-        view.backgroundColor = UIColor.blue;
-        view.addGestureRecognizer(tap)
-        self.view .addSubview(view)
+        self.lapLabel.textColor = UIColor.black
+        self.lapLabel.font = UIFont.systemFont(ofSize: 15.0)
+        self.lapLabel.text = self.watch.currentLapTime().timeText()
+        self.view.addSubview(self.lapLabel)
         
-        self.watch = Watch()
-        self.watch.start()
+        self.totalLabel.textColor = UIColor.black
+        self.totalLabel.font = UIFont.systemFont(ofSize: 20.0)
+        self.totalLabel.text = self.watch.totalTime().timeText()
+        self.totalLabel.textAlignment = .center
+        self.view.addSubview(self.totalLabel)
         
+        self.button1.setTitle("Start", for: .normal)
+        self.button1.setTitle("Stop", for: .selected)
+        self.button1.setTitleColor(UIColor.systemGreen, for: .normal)
+        self.button1.setTitleColor(UIColor.red, for: .selected)
+        self.button1.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        self.button1.addTarget(self, action: #selector(onTap1), for:UIControl.Event.touchUpInside)
+        self.view.addSubview(self.button1)
+        
+        self.button2.setTitle("Reset", for: .normal)
+        self.button2.setTitle("Lap", for: .selected)
+        self.button2.setTitleColor(UIColor.black, for: .normal)
+        self.button2.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        self.view.addSubview(self.button2)
+        
+        self.tableView.backgroundColor = .white
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.view.addSubview(self.tableView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.lapLabel.frame = CGRect(x: self.view.bounds.size.width * 0.5, y: 100, width: self.view.bounds.size.width * 0.5, height: 30)
+        self.totalLabel.frame = CGRect(x: 0, y: 140, width: self.view.bounds.size.width , height: 50)
+        self.button1.frame = CGRect(x: 100, y: self.totalLabel.frame.origin.y + 60, width: 50, height: 30)
+        self.button2.frame = CGRect(x: self.button1.frame.origin.x + 80, y: self.button1.frame.origin.y , width: 50, height: 30)
+        self.tableView.frame = CGRect(x: 0, y: self.view.bounds.size.height - 400, width: self.view.bounds.size.width, height: 400)
     }
     
     func testTimer() -> Void {
@@ -63,9 +96,65 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let time = self.watch.currentLapTime()
-        print("time:" + "\(time)")
+        let ran = Int.random(in: 1...100)
+        if ran % 2 == 0 {
+            self.watch.lap()
+            let lap = self.watch.currentLapTime()
+            print("lap time:" + "\(lap)")
+        } else {
+            let lap = self.watch.currentLapTime()
+            print("lap time:" + "\(lap)")
+            
+            let total = self.watch.totalTime()
+            print("total time:" + "\(total)")
+        }
+
     }
 
+}
+
+extension ViewController {
+    @objc func onTap1() -> Void {
+        switch self.watch.watchStatus() {
+        case .INITIAL:
+            do {
+                self.watch.start()
+                self.button1.select(self.button1)
+            }
+        case .RUNNING:
+            do {
+                
+            }
+        default: break
+            
+        }
+    }
+    
+    @objc func onTap2() -> Void {
+        
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.watch.lapItems().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell =  tableView.dequeueReusableCell(withIdentifier: "cell"){
+            
+            return cell
+        }
+        
+        
+        return UITableViewCell()
+        
+    }
+    
+    
 }
 
