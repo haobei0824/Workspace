@@ -38,15 +38,21 @@ struct TimeItem {
     }
 }
 
+protocol WatchDelegate: AnyObject {
+    func watch(onFire watch:Watch) -> Void
+}
+
 class Watch {
+    weak var delegate: WatchDelegate?
+    
     private var timer : DispatchSourceTimer
     private var status : WatchStatus
     private var intervals = [WatchInterval]()
+
     
     deinit {
         self.timer.setEventHandler(handler: nil)
         self.timer.cancel()
-        
     }
     
     init() {
@@ -60,6 +66,12 @@ class Watch {
                 
                 self.intervals.removeLast()
                 self.intervals.append(lastItem)
+            }
+            
+            DispatchQueue.main.async {
+                if let delegate = self.delegate {
+                    delegate.watch(onFire: self)
+                }
             }
         }
         self.status = WatchStatus.INITIAL

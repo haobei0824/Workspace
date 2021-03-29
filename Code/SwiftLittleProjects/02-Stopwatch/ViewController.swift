@@ -59,6 +59,8 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(self.tableView)
+        
+        self.watch.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,22 +118,29 @@ class ViewController: UIViewController {
 extension ViewController {
     @objc func onTap1() -> Void {
         switch self.watch.watchStatus() {
-        case .INITIAL:
+        case .INITIAL, .SUSPENDED:
             do {
                 self.watch.start()
-                self.button1.select(self.button1)
+                self.button1.isSelected = true
             }
+            
         case .RUNNING:
             do {
-                
+                self.watch.pause()
+                self.button1.isSelected = false
             }
-        default: break
-            
         }
     }
     
     @objc func onTap2() -> Void {
         
+    }
+}
+
+extension ViewController: WatchDelegate {
+    func watch(onFire watch:Watch) -> Void {
+        self.lapLabel.text = self.watch.currentLapTime().timeText()
+        self.totalLabel.text = self.watch.totalTime().timeText()
     }
 }
 
