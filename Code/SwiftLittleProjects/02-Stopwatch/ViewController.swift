@@ -48,10 +48,14 @@ class ViewController: UIViewController {
         self.button1.addTarget(self, action: #selector(onTap1), for:UIControl.Event.touchUpInside)
         self.view.addSubview(self.button1)
         
-        self.button2.setTitle("Reset", for: .normal)
-        self.button2.setTitle("Lap", for: .selected)
+        self.button2.setTitle("Lap", for: .normal)
+        self.button2.setTitle("Reset", for: .selected)
         self.button2.setTitleColor(UIColor.black, for: .normal)
+        self.button2.setTitleColor(UIColor.red, for: .selected)
+        self.button2.setTitleColor(UIColor.gray, for: .disabled)
         self.button2.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        self.button2.addTarget(self, action: #selector(onTap2), for:UIControl.Event.touchUpInside)
+        self.button2.isEnabled = false
         self.view.addSubview(self.button2)
         
         self.tableView.backgroundColor = .white
@@ -122,18 +126,35 @@ extension ViewController {
             do {
                 self.watch.start()
                 self.button1.isSelected = true
+                
+                self.button2.isEnabled = true
+                self.button2.isSelected = false
             }
             
         case .RUNNING:
             do {
                 self.watch.pause()
                 self.button1.isSelected = false
+                
+                self.button2.isEnabled = true
+                self.button2.isSelected = true     // reset
             }
         }
     }
     
     @objc func onTap2() -> Void {
-        
+        if !self.button2.isSelected {       // lap
+            self.watch.lap()
+        } else {        // reset
+            self.watch.reset()
+            
+            self.lapLabel.text = self.watch.currentLapTime().timeText()
+            self.totalLabel.text = self.watch.totalTime().timeText()
+            
+            self.button1.isSelected = false
+            self.button2.isSelected = false
+            self.button2.isEnabled = false
+        }
     }
 }
 

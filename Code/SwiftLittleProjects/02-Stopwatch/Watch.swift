@@ -107,8 +107,6 @@ extension Watch {
         }
         
         self.intervals.removeAll()
-        
-        self.timer.suspend()
         self.status = WatchStatus.INITIAL
     }
     
