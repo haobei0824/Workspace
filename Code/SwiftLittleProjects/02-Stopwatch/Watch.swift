@@ -190,7 +190,7 @@ extension Watch {
             previousNano += interval.end - start
         }
         
-        return lapTimeItems
+        return lapTimeItems.reversed()
     }
     
     func timeItem(WithNanoseconds nanoSeconds:UInt64) -> TimeItem {

@@ -145,6 +145,8 @@ extension ViewController {
     @objc func onTap2() -> Void {
         if !self.button2.isSelected {       // lap
             self.watch.lap()
+            
+            self.tableView.reloadData()
         } else {        // reset
             self.watch.reset()
             
@@ -154,6 +156,8 @@ extension ViewController {
             self.button1.isSelected = false
             self.button2.isSelected = false
             self.button2.isEnabled = false
+            
+            self.tableView.reloadData()
         }
     }
 }
@@ -176,15 +180,13 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell =  tableView.dequeueReusableCell(withIdentifier: "cell"){
-            
+            let item = self.watch.lapItems()[indexPath.row]
+            cell.textLabel?.text = item.timeText()
             return cell
         }
-        
         
         return UITableViewCell()
         
     }
-    
-    
 }
 
