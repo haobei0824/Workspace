@@ -32,7 +32,10 @@ var directionToHead = CompassPoint.west
 directionToHead = .east
 ```
 
-#### Matching Enumeration Values with a Switch Statement
+#### Matching Enumeration Values 
+
+- with a Switch Statement
+- with a if statement
 
 ```swift
 let somePlanet = Planet.earth
@@ -43,6 +46,10 @@ default:
     print("Not a safe place for humans")
 }
 // Prints "Mostly harmless”
+
+if somePlanet == .earth {
+    print("Planet.earth self: " + "\(somePlanet)")
+}
 ```
 
 #### Iterating over Enumeration Cases
@@ -69,6 +76,43 @@ for beverage in Beverage.allCases {
 ```
 
 
+
+### Associated Values
+
+Enumeration cases can specify associated values of any type to be stored along with each different case value.
+
+it varies each time you use that case as a value in your code.
+
+You extract each associated value as a constant (with the let prefix) or a variable (with the var prefix) for use within the switch case’s body:
+
+```swift
+enum Barcode {
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+
+var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+switch productBarcode {
+case .upc(let numberSystem, let manufacturer, let product, let check):
+    print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
+case .qrCode(let productCode):
+    print("QR code: \(productCode).")
+}
+```
+
+if all are extracted as variables, you can place a single var or let annotation before the case name, for brevity:
+
+```swift
+switch productBarcode {
+case let .upc(numberSystem, manufacturer, product, check):
+    print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
+case let .qrCode(productCode):
+    print("QR code: \(productCode).")
+}
+// Prints "QR code: ABCDEFGHIJKLMNOP.”
+```
+
+Can not match enumeration case with a if statement if has associated value
 
 ### Raw value
 
@@ -146,21 +190,3 @@ if let somePlanet = Planet(rawValue: positionToFind) {
     print("There isn't a planet at position \(positionToFind)")
 } 
 ```
-
-
-
-### Associated Values
-
-Enumeration cases can specify associated values of any type to be stored along with each different case value.
-
-it varies each time you use that case as a value in your code.
-
-You extract each associated value as a constant (with the let prefix) or a variable (with the var prefix) for use within the switch case’s body:
-
-```swift
-enum Barcode {
-    case upc(Int, Int, Int, Int)
-    case qrCode(String)
-}
-```
-
