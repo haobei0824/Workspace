@@ -28,3 +28,17 @@ till you come to the end; then stop."
 """
 print(softWrappedQuotation)
 
+// Special Characters in String Literals
+
+let dollarSign = "\u{24}"        // $,  Unicode scalar U+0024
+let blackHeart = "\u{1F496}"      // 💖, Unicode scalar ”
+
+print(dollarSign)
+print(blackHeart)
+
+let threeMoreDoubleQuotationMarks = #"""
+Here are three more double quotes: """
+"""#
+
+print(threeMoreDoubleQuotationMarks)
+
