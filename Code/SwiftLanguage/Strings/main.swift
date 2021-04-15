@@ -30,15 +30,21 @@ print(softWrappedQuotation)
 
 // Special Characters in String Literals
 
-let dollarSign = "\u{24}"        // $,  Unicode scalar U+0024
+let dollarSign:Character = "\u{24}"        // $,  Unicode scalar U+0024
 let blackHeart = "\u{1F496}"      // 💖, Unicode scalar ”
 
 print(dollarSign)
 print(blackHeart)
 
+
+let Delimiters = #"Line 1\nLine 2"#
+print(Delimiters)
+let Delimiters2 = #"Line 1\#nLine 2\nLine3"#
+print(Delimiters2)
+let Delimiters3 = ###"Line1\###nLine2"###
+print(Delimiters3)
+
 let threeMoreDoubleQuotationMarks = #"""
-Here are three more double quotes: """
+Here are three more double quotes: """, \t,''\
 """#
-
 print(threeMoreDoubleQuotationMarks)
-
