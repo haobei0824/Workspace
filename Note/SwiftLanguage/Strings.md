@@ -31,7 +31,7 @@ till you come to the end; then stop."
 print(softWrappedQuotation)
 ```
 
-#### Special Characters in String Literals”
+#### Special Characters in String Literals
 
 - The escaped special characters \0 (null character), \\ (backslash), \t (horizontal tab), \n (line feed), \r (carriage return), \" (double quotation mark) and \' (single quotation mark)
 
@@ -45,6 +45,25 @@ print(dollarSign)
 print(blackHeart)
 ```
 
+#### Extended delimiters
+
+ string literal within extended delimiters can include special characters  without invoking their effect.
+
+if you need the special effects of a character in a string literal, match the number of number signs within the string following the escape character ``\``
+
+```swift
+let Delimiters = #"Line 1\nLine 2"#
+print(Delimiters)	// Line 1\nLine 2
+let Delimiters2 = #"Line 1\#nLine 2\nLine3"#
+print(Delimiters2)
+// Line 1
+// Line 2\nLine3
+let Delimiters3 = ###"Line1\###nLine2"###
+print(Delimiters3)
+// Line1
+// Line2
+```
+
 #### String Mutability
 
 You can use ``+=`` to extend string.
@@ -53,6 +72,15 @@ You can use ``+=`` to extend string.
 var variableString = "Horse"
 variableString += " and carriage"
 // variableString is now "Horse and carriage”
+```
+
+#### String Interpolation
+
+``String interpolation`` is a way to construct a new String value from a mix of constants, variables, literals, and expressions by including their values inside a string literal
+
+```swift
+let multiplier = 3
+let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)
 ```
 
 #### Strings Are Value Types
