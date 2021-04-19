@@ -118,5 +118,29 @@ welcome.append(exclamationMark)
 // "hello there!”
 ```
 
+### Unicode
+
+Swift’s String and Character types are fully Unicode-compliant.
+
+**Unicode scalar value**
+
+- is a unique 21-bit number for a character or modifier,  such as U+0061 for LATIN SMALL LETTER A ("a")
+- Swift’s native String type is built from Unicode scalar values
+
+**Extended Grapheme Clusters**
+
+- An extended grapheme cluster is a sequence of one or more Unicode scalars that (when combined) produce a single human-readable character
+
+- Every instance of Swift’s Character type represents a single extended grapheme cluster
+
+
+```swift
+let eAcute: Character = "\u{E9}"                         // é
+let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by ́
+// eAcute is é, combinedEAcute is é
+```
+
+
+
 
 
