@@ -122,12 +122,12 @@ welcome.append(exclamationMark)
 
 Swift’s String and Character types are fully Unicode-compliant.
 
-**Unicode scalar value**
+#### Unicode scalar value
 
 - is a unique 21-bit number for a character or modifier,  such as U+0061 for LATIN SMALL LETTER A ("a")
 - Swift’s native String type is built from Unicode scalar values
 
-**Extended Grapheme Clusters**
+#### Extended Grapheme Clusters
 
 - An extended grapheme cluster is a sequence of one or more Unicode scalars that (when combined) produce a single human-readable character
 
@@ -140,7 +140,86 @@ let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by ́
 // eAcute is é, combinedEAcute is é
 ```
 
+#### Counting Characters
 
+Swift’s use of extended grapheme clusters for Character values means that string concatenation and modification may not always affect a string’s character count.
 
+The count of the characters returned by the count property isn’t always the same as the length property of an NSString that contains the same characters. The length of an NSString is based on the number of 16-bit code units within the string’s UTF-16 representation and not the number of Unicode extended grapheme clusters within the string.
 
+```swift
+var word = "cafe"
+print("the number of characters in \(word) is \(word.count)")
+// Prints "the number of characters in cafe is 4"
+
+word += "\u{301}"    // COMBINING ACUTE ACCENT, U+0301
+
+print("the number of characters in \(word) is \(word.count)")
+// Prints "the number of characters in café is 4”
+```
+
+### Handle String
+
+#### Accessing
+
+Each String value has an associated index type, ``String.Index``, which corresponds to the position of each Character in the string.
+
+- String property: ``startIndex``  
+
+- String property: ``endIndex`` 
+- String property: ``indices`` 
+- String.Index method: ``index(before:)``
+- String.Index method: ``index(after:)``
+- String.Index method: ``index(_:offsetBy:)``
+
+```swift
+    let greeting = "Guten Tag!"
+    greeting[greeting.startIndex]
+    // G
+    greeting[greeting.index(before: greeting.endIndex)]
+    // !
+    greeting[greeting.index(after: greeting.startIndex)]
+    // u
+    let index = greeting.index(greeting.startIndex, offsetBy: 7)
+    greeting[index]
+    // a”
+
+    for index in greeting.indices {
+        print("\(greeting[index]) ", terminator: "")
+    }
+```
+
+Attempting to access an index outside of a string’s range or a Character at an index outside of a string’s range will trigger a runtime error.
+
+```swift
+greeting[greeting.endIndex] // Error
+greeting.index(after: greeting.endIndex) // Error”
+```
+
+#### Inserting
+
+- ``insert(_:at:)``
+- ``insert(contentsOf:at:)``
+
+```swift
+var welcome = "hello"
+welcome.insert("!", at: welcome.endIndex)
+// welcome now equals "hello!"
+
+welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
+// welcome now equals "hello there!” 
+```
+
+#### Removing
+
+- ``remove(at:)``
+- ``removeSubrange(_:)``
+
+```swift
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+// welcome now equals "hello there"
+
+let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+welcome.removeSubrange(range)
+// welcome now equals "hello”
+```
 
