@@ -223,3 +223,59 @@ welcome.removeSubrange(range)
 // welcome now equals "hello”
 ```
 
+#### Substrings
+
+When you get a substring from a string—for example, using a subscript or a method like prefix(_:)—the result is an instance of Substring, not another string. S
+
+ubstrings in Swift have most of the same methods as strings, which means you can work with substrings the same way you work with strings. 
+
+However, unlike strings, you use substrings for only a short amount of time while performing actions on a string. When you’re ready to store the result for a longer time, you convert the substring to an instance of String. 
+
+<img src="images/substring01.png" style="zoom:50%;" />
+
+```swift
+    let greeting = "Hello, world!"
+    let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
+    let beginning = greeting[..<index]
+    // beginning is "Hello"
+
+    // Convert the result to a String for long-term storage.
+    let newString = String(beginning)
+    
+    print(newString)
+```
+
+#### Equality
+
+- String and character equality is checked with the “equal to” operator (==) and the “not equal to” operator (!=)\
+- Two String values (or two Character values) are considered equal if their extended grapheme clusters are canonically equivalent.
+
+```swift
+// "Voulez-vous un café?" using LATIN SMALL LETTER E WITH ACUTE
+let eAcuteQuestion = "Voulez-vous un caf\u{E9}?"
+
+// "Voulez-vous un café?" using LATIN SMALL LETTER E and COMBINING ACUTE ACCENT
+let combinedEAcuteQuestion = "Voulez-vous un caf\u{65}\u{301}?"
+
+if eAcuteQuestion == combinedEAcuteQuestion {
+    print("These two strings are considered equal")
+}
+// Prints "These two strings are considered equal
+```
+
+- Conversely, LATIN CAPITAL LETTER A (U+0041, or "A"), as used in English, is not equivalent to CYRILLIC CAPITAL LETTER A (U+0410, or "А"), as used in Russian. The characters are visually similar, but don’t have the same linguistic meaning:
+
+```swift
+let latinCapitalLetterA: Character = "\u{41}"
+
+let cyrillicCapitalLetterA: Character = "\u{0410}"
+
+if latinCapitalLetterA != cyrillicCapitalLetterA {
+    print("These two characters are not equivalent.")
+}
+// Prints "These two characters are not equivalent.
+```
+
+#### Prefix and Suffix
+
+The ``hasPrefix(_:)`` and `hasSuffix(_:)` methods perform a character-by-character canonical equivalence comparison between the extended grapheme clusters in each string
