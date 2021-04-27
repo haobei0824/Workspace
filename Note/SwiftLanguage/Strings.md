@@ -279,3 +279,31 @@ if latinCapitalLetterA != cyrillicCapitalLetterA {
 #### Prefix and Suffix
 
 The ``hasPrefix(_:)`` and `hasSuffix(_:)` methods perform a character-by-character canonical equivalence comparison between the extended grapheme clusters in each string
+
+### Unicode Representations of Strings
+
+the Unicode scalars in the Swift string are encoded in one of several Unicode-defined encoding forms
+
+- UTF-8 encoding form, accessed with the string’s `utf8` property
+- UTF-16 encoding form, accessed with the string’s `utf16` property
+- UTF-32 encoding form, equivalent to the 21-bit Unicode scalar values, accessed with the string’s `unicodeScalars` property
+
+```swift
+    let dogString = "Dog‼🐶"
+    for codeUnit in dogString.utf8 {
+        print("\(codeUnit) ", terminator: "")
+    }
+    // Prints "68 111 103 226 128 188 240 159 144 182 
+    
+    for codeUnit in dogString.utf16 {
+        print("\(codeUnit) ", terminator: "")
+    }
+    // Prints "68 111 103 8252 55357 56374
+    
+    for scalar in dogString.unicodeScalars {
+        print("\(scalar.value) ", terminator: "")
+    }
+    print("")
+    // Prints "68 111 103 8252 128054 ”
+```
+
