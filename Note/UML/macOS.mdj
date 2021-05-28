@@ -5565,7 +5565,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF5P8grpIYXEcI="
 					},
-					"name": "Buttons",
+					"name": "NSControl",
 					"ownedViews": [
 						{
 							"_type": "UMLClassView",
