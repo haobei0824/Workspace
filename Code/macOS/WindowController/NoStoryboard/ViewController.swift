@@ -8,9 +8,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    // 必须重写 loadView 方法，并且创建view，否则运行时会出错
+    // 必须重写 loadView 方法，并且创建view和frame，否则运行时会出错
     override func loadView() {
-        view = NSView()
+        view = NSView(frame: CGRect(x: 0, y: 0, width: 400, height: 100))
     }
 
     override func viewDidLoad() {
